@@ -1,0 +1,31 @@
+.wrapper{
+    /* display:flex; */
+    background-color: #6fa8dcff; 
+} 
+
+.about{
+    text-align: center;
+    color: black;
+    height: 100%;
+    padding-left: 30px;
+    margin-left: 30px;
+    /* background-color: #6fa8dcff; */
+    box-sizing: border-box;
+    padding-top:50px; 
+  }
+  
+  .about h1{
+    
+    border-radius:100px; 
+    border-color: antiquewhite;
+    float:left;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 50px;
+    
+  }
+  
+  .about p{
+    float:left;
+  }
+
+ 
