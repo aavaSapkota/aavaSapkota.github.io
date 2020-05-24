@@ -60,7 +60,7 @@ body {
 
 .home {
   width: 100vh;
-  padding-left: 0px; 
+  padding-left: 10px; 
   box-sizing:border-box;
   padding-bottom: 400px; 
   /* overflow:hidden; */
