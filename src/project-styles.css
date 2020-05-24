@@ -1,16 +1,18 @@
 .projects {
   text-align: center;
   color: black;
-  height: 100%;
+  height: auto; 
   width: 100%;
-  padding-left: 10px;
-  padding-right: 10px; 
+  padding-left: 30px;
+  padding-right: 30px; 
   margin-left: 30px;
+  margin-right:30px; 
   /* background-color: #6fa8dcff; */
   box-sizing: border-box;
   padding-top: 1px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   float: center;
+  align-content: space-between; 
 }
 
 .projects h1 {
@@ -34,7 +36,7 @@
   padding: 10px; 
 }
 .column1{
-  flex:30%;
+  flex:30%; 
   padding: 10px;
 }
 
