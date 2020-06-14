@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="home-styles.css" />
     <link rel="stylesheet" href="about-styles.css" />
     <link rel="stylesheet" href="project-styles.css" />
-    <link rel="stylesheet" href="contact-styles.css"/>
+    <link rel="stylesheet" href="contact-styles.css" />
+    <link rel="stylesheet" href="lessons-styles.css" />
 
     <link
       href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap"
@@ -19,102 +20,151 @@
   </head>
 
   <body>
-    <div class="topnav">
-      <div class="title-nav">
-        <a href="index.html"
-          ><img src="Personal Logo.svg" alt="Personal-Logo"
-        /></a>
+    <header>
+      <div class="topnav">
+        <div class="title-nav">
+          <a href="index.html"
+            ><img src="img/Personal Logo (1).svg" alt="Personal-Logo"
+          /></a>
+        </div>
+        <div class="main-nav">
+          <a href="#about">About Me!</a>
+          <a href="#lessons">Lessons</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
-      <div class="main-nav">
-        <a href="#contact">Contact</a>
-        <a href="#projects">Projects</a>
-        <a href="#lessons">Lessons</a>
-        <a href="#about">About Me!</a>
-      </div>
-    </div>
+    </header>
 
-    <!--Heading-->
-    <div class="img-wrapper">
-      <!-- <img src="background-img.svg" /> -->
-      <div class="home">
-        <!-- <div class="left-side"> -->
-        <h1>Hello, I'm Aava Sapkota</h1>
+    <main>
+      <!--Heading-->
+      <div class="img-wrapper">
+        <div class="home">
+          <h1>Hello, I'm Aava Sapkota</h1>
 
-        <div class="intro">
-          I am
-          <div class="slider">
-            <div class="slider-t1">an Unapolagetic-Idealist</div>
-            <div class="slider-t2">a Dreamer</div>
-            <div class="slider-t3">a Risk-Taker</div>
-            <div class="slider-t4">an Aspiring Web-Developer</div>
-            <div class="slider-t5">a Life-long Learner</div>
+          <div class="intro">
+            I am
+            <div class="slider">
+              <div class="slider-t1">a Fighter</div>
+              <div class="slider-t2">a Dreamer</div>
+              <div class="slider-t3">a Risk-Taker</div>
+              <div class="slider-t4">a Problem Solver</div>
+              <div class="slider-t5">a Life-long Learner</div>
+            </div>
           </div>
         </div>
+      </div>
+      <!-- <img src="background-img.svg" /> -->
+      <div class="abt-wrapper" style="background-color: #0d2b31ff;">
+        <div class="about" id="about">
+          <h1>About Me!</h1>
+          <div class="about-me">
+            <p>
+              Hi, I'm Aava Sapkota! I'm a currently a student in the MaCS
+              program at William Lyon Mackenzie CI. I have a strong interest in
+              Computer Science and the world of technology. I am an extremely
+              enthusiastic and creative person.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects" id="projects">
+        <h1>Projects</h1>
         <p>
-          Welcome to my portfolio! Here, you can discover the captavating person
-          that is Aava Sapkota, as well as some of my projects that I have made
-          or have been involved in. Scroll down to follow my never ending
-          journey of learning!
+          Here are some of the projects I've worked on! Take a look:
         </p>
+        <div class="row">
+          <div class="column2">
+            <img src="img/background-img (6).svg" />
+            <div class="description"></div>
+          </div>
+          <div class="column2">
+            <img src="img/background-img (6).svg" />
+            <div class="description"></div>
+          </div>
+          <div class="column2">
+            <img src="img/background-img (6).svg" />
+            <div class="description"></div>
+          </div>
+          <div class="column2">
+            <img src="img/background-img (6).svg" />
+            <div class="description"></div>
+          </div>
+          <div class="column2">
+            <img src="img/background-img (6).svg" />
+            <div class="description"></div>
+          </div>
+          <div class="column2">
+            <img src="img/background-img (6).svg" />
+            <div class="description"></div>
+          </div>
+        </div>
+
+        <a href="projects.html">Wanna learn more?</a>
       </div>
-    </div>
-    <!-- <img src="background-img.svg" /> -->
-    <div class="wrapper">
-      <div class="about" id="about">
-        <h1>About Me!</h1>
+
+      <div class="lessons" id="lessons">
+        <h1>Lessons</h1>
         <p>
-          Hi, I'm Aava Sapkota! I'm a currently a student in the MaCS program at
-          William Lyon Mackenzie CI. I have a strong interest in Computer
-          Science and the world of technology. I am an extremely enthusiastic
-          and creative person.
-          <!-- Hello! My name is Aava Sapkota, and I am a student at William Lyon Mackenzie C.I with a strong
-        interest in Computer Science! I am currently enrolled in the MaCS program, a science and technologies 
-        enriched program.  -->
+          Here are some tutorials for those who are learning Java:
         </p>
+
+        <div class="column2">
+          <div class="tutorial-description">
+            <h3>Array and Arraylists</h3>
+          </div>
+          <a href="Arrays.html" class="button">Go to Lesson</a>
+        </div>
+
+        <div class="row">
+          <div class="column2">
+            <div class="tutorial-description">
+              <h3>OOP</h3>
+            </div>
+            <a href="OOP.html" class="button">Go to Lesson</a>
+          </div>
+
+          <div class="column2">
+            <div class="tutorial-description">
+              <h3>Search and Sort</h3>
+            </div>
+            <a href="SearchSort.html" class="button">Go to Lesson</a>
+          </div>
+
+          <div class="column2">
+            <div class="tutorial-description">
+              <h3>Demo</h3>
+            </div>
+            <a href="FinalProject.html" class="button">Go to Lesson</a>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
 
-    <div class="projects" id="projects">
-      <h1>Projects</h1>
-      <p>
-        Here are some of the projects I've worked on! Take a look:
-      </p>
-      <div class="row">
-        <div class="column1"><img src="background-img (6).svg"> </div>
-        <div class="column1"><img src="background-img (6).svg"></div>
-        <div class="column2"><img src="background-img (6).svg"></div>
-        <div class="column2"><img src="background-img (6).svg"></div>
-        <div class="column3"><img src="background-img (6).svg"></div>
-        <div class="column3"><img src="background-img (6).svg"></div>
+    <footer>
+      <div class="contact" id="contact">
+        <h1>Get in touch!</h1>
+        <div>
+          <a href="https://github.com/aavaSapkota"
+            ><img
+              src="img/github_PNG40.png"
+              alt="github"
+              width="50"
+              height="50"
+          /></a>
+          <a href="https://www.linkedin.com/in/aava-sapkota-584b3b175/"
+            ><img src="img/linkedin.png" alt="linkedin" width="50" height="50"
+          /></a>
+          <a href="https://www.instagram.com/aava_s._/"
+            ><img
+              src="img/instagram.png"
+              alt="instagram"
+              width="60"
+              height="45"
+          /></a>
+        </div>
       </div>
-    </div>
-
-    <div class="projects" id="lessons">
-      <h1>Lessons</h1>
-      <p>
-        Here are some tutorials for those who are learning Java:
-      </p>
-      <div class="row">
-        <div class="column1"><img src="background-img (6).svg"> </div>
-        <div class="column1"><img src="background-img (6).svg"></div>
-        <div class="column2"><img src="background-img (6).svg"></div>
-        <div class="column2"><img src="background-img (6).svg"></div>
-        <div class="column3"><img src="background-img (6).svg"></div>
-        <div class="column3"><img src="background-img (6).svg"></div>
-      </div>
-    </div>
-
-    <div class="contact" id="contact">
-      <h1>Get in touch!</h1>
-      <div>
-          <img src="github_PNG40.png" alt="github" width="50" height="50"/>
-          <img src="linkedin.png" alt="linkedin" width="50" height="50"/>
-          <img src="phone.png" alt="phone" width="45" height="45"/>
-          <img src="email-icon.svg" alt="email" width="45" height="45"/>
-          <img src="instagram.png" alt="instagram" width="60" height="45"/>
-      </div>
-    </div>
-
-
+    </footer>
   </body>
 </html>

@@ -1,10 +1,16 @@
-body {
+html, body {
+  margin:0;
   height: 100vh;
+  padding: 0;
+  overflow-x: hidden;
   /* background-color: #fff; */
 }
 
 .topnav {
+  width: 100%;
+  background-color:#134f5cff;
   overflow: hidden;
+  display: inline-block;
 }
 
 .title-nav a{
@@ -26,11 +32,11 @@ body {
   padding-left: 14px;
   padding-top: 5px;
   padding-bottom: 5px; 
-  float: right;
+  float: left;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: #134f5c;
+  color: white;
   text-align: center;
-  border-color: #134f5c;
+  border-color: white;
   border: 5px soild black;
   text-decoration: none;
   font-size: 17px;
@@ -47,43 +53,33 @@ body {
   color: white;
 }
 
-.wrapper{
+.abt-wrapper{
+  /* float:center; */
   display:flex; 
-}
-.left-side{
-  float: left;
-}
-
-.right-side{
-  float: right;
 }
 
 .home {
-  width: 100vh;
-  padding-left: 10px; 
+  text-align:center;
+  width: 100%;
+  height:;
   box-sizing:border-box;
-  padding-bottom: 400px; 
-  /* overflow:hidden; */
-  
 }
 
 .img-wrapper{
   width: 100%;
-  height:auto;
-  background-image: url("background-img (6).svg");
+  height:70vh;
+  background-image: url("img/home-bkg (1).svg");
   background-repeat: no-repeat;
-  background-position: bottom; 
-  /* background-size: cover;  */
+  background-position: top; 
+  background-size: cover; 
 }
 
 .home h1 {
-  text-align: left;
+  text-align: center;
   color: black;
-  height: 100%;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 50px;
-  margin-left: 50px;
-  padding-top: 30px;
+  font-size: 55px;
+  padding-top: 80px;
 }
 
 .home p{
@@ -91,9 +87,19 @@ body {
   line-height: 1.5;
   color: black; 
   font-size: 20px; 
-  margin-left: 60px; 
+  
 }
 
+.button{
+  background-color: #2f6796; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
 .intro {
   font-size: 20px;
@@ -101,9 +107,8 @@ body {
   font-weight: bold;
   height: 40px;
   display: flex;
-  align-items: left;
-  justify-content: left;
-  margin-left: 60px;
+  align-items: center;
+  justify-content: center;
   font-family: Verdana, Geneva, sans-serif;
 }
 

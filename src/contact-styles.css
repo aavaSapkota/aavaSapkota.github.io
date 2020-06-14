@@ -1,13 +1,9 @@
 .contact {
     text-align: center;
-    color: black;
+    color: white;
     height: auto; 
     width: 100%;
-    padding-left: 30px;
-    padding-right: 30px; 
-    margin-left: 30px;
-    margin-right:30px; 
-    /* background-color: #6fa8dcff; */
+    background-color: #0d2b31ff;
     box-sizing: border-box;
     padding-top: 1px;
     padding-bottom: 10px;
@@ -16,7 +12,6 @@
   }
 
   .contact h1 {
-    border-color: antiquewhite;
     float: center;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 50px;

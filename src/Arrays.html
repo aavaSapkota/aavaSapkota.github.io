@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en-CAN">
+  <head>
+    <title>Aava Sapkota</title>
+    <link rel="stylesheet" href="home-styles.css" />
+    <link rel="stylesheet" href="about-styles.css" />
+    <link rel="stylesheet" href="project-styles.css" />
+    <link rel="stylesheet" href="contact-styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="topnav">
+        <div class="title-nav">
+          <a href="index.html"
+            ><img src="img/Personal Logo (1).svg" alt="Personal-Logo"
+          /></a>
+        </div>
+        <div class="main-nav">
+          <a href="index.html">About Me!</a>
+          <a href="#lessons">Lessons</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1>Arrays and Arraylists</h1>
+
+      <h5>
+        In this tutorial, you will be learning about how to declare, initialize
+        and use arrays and arraylists. If you aren’t familiar with any of the
+        following prerequisites, I highly recommend checking them out for a
+        better understanding of the content listed here.
+      </h5>
+
+      <h3>Prerequisites:</h3>
+      <ul>
+        <li>Primitive data types</li>
+        <li>Strings</li>
+        <li>Variables</li>
+        <li>For Loops</li>
+        <li>For-Each Loops</li>
+      </ul>
+
+      <h2><em>ARRAYS</em></h2>
+
+      <p>
+        An array is a data structure with a fixed length that stores values of
+        the same data type. Arrays can hold any data type, including other
+        classes, and variable values. You can think of an array almost like a
+        work book. It has a fixed number of pages, and content can be added,
+        taken away or changed, and just like a workbook, an array is treated
+        like an object. Throughout the tutorial, you will see the different ways
+        to declare, initialize and manipulate arrays.
+      </p>
+
+      <h4>Declaring arrays:</h4>
+
+      <p>
+        We declare arrays to let the program know that we will be needing space
+        for this object immediately or later in the program. Here are a few ways
+        you can create an array:
+      </p>
+
+      <div class="examples">
+        <ol>
+          <li>Data_type [] array_name = new Data_type[length_of_array];</li>
+
+          <li>Data_type [] array_name = {elements, separated, by, commas};</li>
+
+          <li>Data_type [] array_name;</li>
+        </ol>
+      </div>
+
+      <p>
+        Let's look at the first declaration option. In the first declaration,
+        the array is declared and a new instance of the array is created. The
+        key to this is the new keyword. Whenever included in a declaration, it
+        instantiates whatever object it is being created, and stores a location
+        in memory for them. In the first declaration, not only is a new array
+        created in the program, and stored in memory, but it’s capacity is also
+        initialized. This means that the array can not hold more than
+        lenth_of_array elements (NOTE: each value stored in an array is referred
+        to as an element). <br /><br />
+
+        The next declaration has the same beginning as the first, but after the
+        equal sign, there are curly brackets containing the array’s elements.
+        This declaration is used to both declare and initialize the array all on
+        one line. This style is used when the programmer (you) knows all of the
+        elements that will be stored in the array. (NOTE: when using this style,
+        you can only use the curly brackets to store all of your elements, only
+        when you declare the array. You cannot declare the array and then later
+        on initialize the array with curly brackets). Unlike the previous
+        declaration, the instance of the array is automatically created, and the
+        keyword new does not need to be explicitly declared. <br /><br />
+
+        Finally, in the last declaration, you will see that no new instance of
+        the array is created. This method is a good idea if you want to declare
+        the array so it affects a specific scope (like a global variable), but
+        don’t know the size or elements to be included in the array. This method
+        is more to just declare the identifier for the array to be used later in
+        the program. <br /><br />
+      </p>
+
+      <h4>Accessing and Initializing arrays:</h4>
+
+      <p>
+        Now that we have created an array, we still have to find a way to put
+        values in it. To put values in an array, we first need to access it’s
+        indices. An index is a location in the array, labeled by a number
+        between 0-array_length-1. Exactly like String indexes, the first spot in
+        the array is labeled 0, and increased until it is just one less than the
+        declared length. To access a position in the array the following code is
+        used:
+      </p>
+
+      <div class="example">
+        <p>arrayName[index]</p>
+      </div>
+
+      <p>
+        When an array is first declared, it is automatically filled with default
+        values.
+      </p>
+
+      <table style="width: 100%;">
+        <tr>
+          <th>Data Type:</th>
+          <td>String/Objects</td>
+          <td>int</td>
+          <td>boolean</td>
+          <td>char</td>
+        </tr>
+        <tr>
+          <th>Default Value</th>
+          <td>null</td>
+          <td>0</td>
+          <td>false</td>
+          <td>'\u0000'</td>
+        </tr>
+      </table>
+
+      <p>To change or initialize an array the following code is used:</p>
+
+      <div class="example">
+        <p>array[index]=newValue;</p>
+      </div>
+
+      <p>
+        The new value must be the same data type as the array, but can be a
+        piece of raw data (a string, integer, double, boolean, char etc) or it
+        can be a variable of the same data type. One way to declare an array is
+        declare each individual index, using the code above. However, a much
+        faster and common way of declaring an array is with a loop. Let's
+        initialize an array with random values between 1-10.
+      </p>
+
+      <div class="example">
+        <p>
+          int [] numbers = new int[10]; <br />
+          for(int i=0; i&lt;10){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;numbers[i]=(int)(Math.random()*10+1);<br />
+          }<br />
+        </p>
+      </div>
+
+      <p>
+        Notice how the for loop only goes through the values 0-9. If the for
+        loop went started at 1 and ended at 10, the program would retrun an
+        IndexOutOfBounds exception, because we would be trying to access index
+        10, when there is no index 10.
+      </p>
+
+      <h4>Example</h4>
+
+      <p>
+        Arrays are often used to store data that relates to one another. For
+        example, if you had a classroom full of students, how would you store
+        all of their names in a Java program? Many of you first time Java
+        programmers may be thinking to make a bunch of variables that store each
+        individual student’s name. Well, let's take a look at the code that
+        would be required to make a classroom list of 10 students and display
+        it:
+      </p>
+
+      <div class="example">
+        <p>
+          public class Classroom{<br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public static void main (String args[]){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String student1 =
+          “Samantha”; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String student2 =
+          “Sarah”; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String student3 =
+          “Amaya”; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String student4 =
+          “Ronald”; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String student5 =
+          “Gary”; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String student6 =
+          “Justin”; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String student7 =
+          “Celeste”;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String student8 =
+          “Eric”; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String student9 =
+          “Aava”; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String student10 =
+          “Steven”; <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(student1);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(student2);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(student3);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(student4);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(student5);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(student6);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(student7);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(student8);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(student9);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(student10);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+
+          }<br />
+        </p>
+      </div>
+
+      <p>
+        As you can see, that takes up a lot of code. Instead lets apply what we
+        just learned and make an array to store all of the names of the
+        students. First lets decide what type of declaration we should do. For
+        this situation, it would be best to use the second option because we
+        already know all the values that will have to be stored in the array.
+      </p>
+
+      <div class="example">
+        <p>
+          public class Classroom{<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public static void main (String args[]){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String [] studentNames
+          = {“Samantha”, “Sarah”, “Amaya”, “Ronald”, “Gary”, “Justin”,
+          “Celeste”, “Eric”, “Aava”, “Steven”};<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          }
+        </p>
+      </div>
+
+      <p>
+        The previous block of code required 10 lines to store 10 names. However,
+        with an array, we were able to store 10 names in just 1 line of code.
+        Next lets display the names. To do this, lets use a loop instead of
+        printing out each index individually;
+      </p>
+
+      <div class="example">
+        <p>
+          public class Classroom{<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public static void main (String args[]){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String [] studentNames
+          = {“Samantha”, “Sarah”, “Amaya”, “Ronald”, “Gary”, “Justin”,
+          “Celeste”, “Eric”, “Aava”, “Steven”};<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int
+          i=0;i&lt;studentNames.length; i++){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(studentNames[i]);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+
+          }
+        </p>
+      </div>
+
+      <p>
+        As you can see, this code is much shorter than our original code, and
+        gets the same job done. If you look closely at this code, you will see
+        that in the for loop, the ending condition is
+      </p>
+      <div class="in-text">
+        i&lt;studentNames.length
+      </div>
+
+      <p>
+        . Just like how you can use .length() to get the length String variable,
+        the same can be done with arrays. However, instead of using a method
+        (.length()), arrays use a field (variable) to get their length. This
+        means that instead of going through your program trying to remember the
+        length of your array, you can simply call array.length and it will
+        reveal the number of elements being stored in your array.
+      </p>
+
+      <h2><em>ARRAYLISTS</em></h2>
+
+      <p>
+        Arraylists are data structures that store class objects in a dynamic
+        list. Unlike arrays, they can store as many objects/elements as they
+        need, and like arrays, arraylists can only store one type of object.
+        Going back to the work book analogy, if an array is a workbook with a
+        set number of pages, then an Array List is a Binder with loose leaf
+        paper pages. In the workbook, you will eventually come to the end, but
+        with a binder, you can just continuously add in new pages.<br />
+        <br />
+
+        Arraylists are objects and are related to the Collections class.To use
+        an arraylist the following package will need to be imported:
+      </p>
+
+      <div class="example">
+        <p>Import java.util.*;</p>
+      </div>
+
+      <h4>Declaring Arraylists</h4>
+
+      <p>
+        As mentioned above, Arraylists are object, so when declaring them, they
+        are declared as Arraylist objects, with the type of data they hold
+        declared in the arrow brackets (&lt;&gt;). The data type in the brackets
+        cannot be any primitive data types (int, char, double, boolean). Just
+        like arrays, Array Lists can be declared in different ways:
+      </p>
+
+
+      <div class = "example">
+        <ol>
+          <li>ArrayList&lt;Object_Class&gt; arrayListName = new ArrayList&lt;Object_Class&gt;();</li>
+          <li>ArrayList<Object_Class> arrayListName;</li> 
+        </ol>
+      </div>
+
+      <p>As you can see, these two declarations look fairly similar to the array declarations above. However, since array lists don’t have a specified size, no size needs to be specified when declaring the arraylist. If you do want to specify the size of an array list, it can be done by placing the size in the curved brackets in the first declaration option. However, this is almost never done, as it remove the dynamic component of the arraylist. </p>
+
+
+      <h4>Wrapper classes:</h4>
+      
+      <p>As mentioned above, primitive data types cannot be put in Arraylists, however it is still possible to store the numeric, character and boolean values that primitive datatypes store. Instead of using primitive datatypes, we use Wrapper classes. These wrapper classes are used to pass in primitive data type values through classes. Each primitive datatype has a class (Strings don’t need a wrapper class because a String is not a primitive data type). </p>
+      
+      <table>
+        <tr>
+          <th>Primitive Data Type</th>
+          <td>int</td>
+          <td>double</td>
+          <td>char</td>
+          <td>boolean</td>
+        </tr>
+        <tr>
+          <th>Wrapper class</th>
+          <td>Integer</td>
+          <td>Double</td>
+          <td>Character</td>
+          <td>Boolean</td>
+        </tr>
+      </table>
+
+      <p>These wrapper classes however, are only required in the declaration of the arraylist. When using your arraylist in your program, you can add on primitive datatypes without having to make new wrapper class objects in your code. When adding primitive objects to arraylists, the arraylist automatically wraps the new piece of data without the programmer having to wrap the data manually. </p>
+    
+      <h4>Accessing and Initializing Arraylists</h4>
+
+      <p>Unlike Arrays, there is only one way to initialize an Arraylist: </p>
+
+      <div class="example"> <p>arraylist=new ArrayList&lt;Object_Class&gt;();</p></div>
+
+      <p>Once an arraylist is initialized, all of it’s values are set to null (because they are all objects, rather than primitive data types. Arraylists are similar to Strings in the sense that they both require methods to access their values. Here are a list of Array list methods and their uses: </p>
+
+
+      <div class="example">
+        <p>arraylist.get(index); // &lt;- returns the object at the specified index
+          arraylist.set(index, newValue); // &lt;- sets the object at the index with the 
+                                             new object
+          arraylist.size(); // &lt;- returns the size of the list
+          arraylist.remove(index); // &lt;- removes the object at index
+          arraylist.add(newValue); // &lt;- adds newValue to the end of the list
+          arraylist.add(index, newValue);// &lt;- inserts newValue at index. 
+          </p>
+      </div>
+
+      <p>Like arrays, arraylists can have their values modified, however, arraylists are more secure because they use methods to access the objects. This means that any data that is supposed to stay private can. </p>
+
+
+      <h4>Example</h4>
+
+      <p>Lets continue on with the previous example of the classroom. Throughout the year, new students will be arriving, but if a new student comes in, we won’t be able to add their name to the class list without making a whole new array. Instead of doing this, lets make the class list into an array list. This way, we can add in any new students that may come into the class. </p>
+
+      <div class="example">
+        import java.util.*;<br/>
+public class Classroom{<br/><br/>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;public static void main (String args[]){<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arraylist&lt;String&gt; classList = new ArrayList&lt;String&gt;();<br/><br/>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classList.add(“Samantha”);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classList.add(“Sarah”);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classList.add(“Amaya”);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classList.add(“Ronald”);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classList.add(“Gary”);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classList.add(“Justin”);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classList.add(“Celeste”);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classList.add(“Eric”);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classList.add(“Aava”);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classList.add(“Steven”);<br/><br/>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int i=0; i&lt;classList.size(); i++){<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(classList.get(i));<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;}
+
+}
+
+      </div>
+
+      <p>While this code is longer, in the long run, it is much more secure and it will be easier to make modifications to the list rather than if it was an array. </p>
+
+
+
+    </main>
+
+    <footer>
+      <div class="contact" id="contact">
+        <h1>Get in touch!</h1>
+        <div>
+          <a href="https://github.com/aavaSapkota"
+            ><img
+              src="img/github_PNG40.png"
+              alt="github"
+              width="50"
+              height="50"
+          /></a>
+          <a href="https://www.linkedin.com/in/aava-sapkota-584b3b175/"
+            ><img src="img/linkedin.png" alt="linkedin" width="50" height="50"
+          /></a>
+          <a href="https://www.instagram.com/aava_s._/"
+            ><img
+              src="img/instagram.png"
+              alt="instagram"
+              width="60"
+              height="45"
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
