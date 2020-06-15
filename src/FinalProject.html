@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="home-styles.css" />
     <link rel="stylesheet" href="about-styles.css" />
     <link rel="stylesheet" href="project-styles.css" />
-    <link rel="stylesheet" href="contact-styles.css"/>
+    <link rel="stylesheet" href="contact-styles.css" />
+     <link rel="stylesheet" href="tutorials-styles.css" />
 
     <link
       href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap"
@@ -23,112 +24,395 @@
       <div class="topnav">
         <div class="title-nav">
           <a href="index.html"
-            ><img src="Personal Logo (1).svg" alt="Personal-Logo"
+            ><img src="img/Personal Logo (1).svg" alt="Personal-Logo"
           /></a>
         </div>
         <div class="main-nav">
-          <a href="#contact">Contact</a>
-          <a href="#projects">Projects</a>
-          <a href="#lessons">Lessons</a>
-          <a href="#about">About Me!</a>
+          <a href="OOP.html">OOP</a>
+          <a href="Arrays.html">Arrays and ArrayLists</a>
+          <a href="SearchSort.html">Search and Sort</a>
+          <a href="FinalProject.html">Making a Game</a>
+          </div> 
         </div>
       </div>
-
     </header>
-    
-<main>
-<!--Heading-->
-<div class="img-wrapper">
-  <div class="home">
-    <h1>Hello, I'm Aava Sapkota</h1>
 
-    <div class="intro">
-      I am
-      <div class="slider">
-        <div class="slider-t1">a Fighter</div>
-        <div class="slider-t2">a Dreamer</div>
-        <div class="slider-t3">a Risk-Taker</div>
-        <div class="slider-t4">a Problem Solver</div>
-        <div class="slider-t5">a Life-long Learner</div>
+    <main class = "main">
+      <h1>Making a Video Game with Java</h1>
+
+      <h3>Prerequisites:</h3>
+      <ul>
+        <li><a></a>OOP</li>
+        <li><a>Arrays and Arraylists</a></li>
+      </ul>
+
+      <p>
+        So for those of you who read my About me page, you all know that I am a
+        Highschool student. Well, for every Computer Science class I have taken
+        up till now, I have had to create a video game for our final project.
+        Many of these games are painfully easy, but they all contain the 4 key
+        aspect of Videos Games that you need to know on your quest to become the
+        best Java Game Developer you can be!
+      </p>
+
+      <h3>Concepts:</h3>
+      <ul>
+        <li><a href="#setting-up">Setting up screens</a></li>
+        <li><a href="#user-input">User Input</a></li>
+        <li><a href="#collisions">Collision Detection</a></li>
+        <li><a href="#graphics-animations">Animation and Graphics Setup</a></li>
+      </ul>
+
+      <h4 id=#setting-up>Setting up</h4>
+
+      <p>
+        The first thing that you need when you start on a game is the main
+        screen setup. To setup a Java swing application, you first need a
+        JFrame.
+      </p>
+
+      <div class="example">
+        <code
+          >import javax.swing.*;<br />
+
+          public class Main{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;JFrame frame; <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public Main(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frame = new
+          JFrame(“Insert Window Title”);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          //end program when window closes<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frame.setSize(700,500);
+          //set width and height of window<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frame.setVisible(true);
+          //set window visibility to true (so it shows window<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frame.setLocationRelativeTo(null);
+          //put window in center of screen<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </code>
       </div>
-    </div>
-  </div>
-</div>
-<!-- <img src="background-img.svg" /> -->
-<div class="abt-wrapper" style = "background-color: #0d2b31ff;">
-  <div class="about" id="about">
-    <h1>About Me!</h1>
-      <div class="about-me">
-        <p>
-          Hi, I'm Aava Sapkota! I'm a currently a student in the MaCS program at
-          William Lyon Mackenzie CI. I have a strong interest in Computer
-          Science and the world of technology. I am an extremely enthusiastic
-          and creative person.
-        </p>
+
+      <p>
+        Every time a new JFrame object is made, those lines need to be there to
+        set it up. Word of advice, don’t use multiple JFrames to make your game.
+        It is typically better to keep everything to one screen and simply add
+        and remove components as needed. <br /><br />
+        Once the screen is set up, it’s important to look at the screen flow.
+        One of the most important components of a game is the carry between the
+        different screens. This surprisingly simple concept has caused many
+        problems for me in the past. The process of screen flow gets more
+        complicated when two different classes are both controlling screen flow.
+        What I did for my Gr.12 ISP was to create a user input class that
+        handled all of the input for the game, including the mouse and key
+        inputs.
+        <br /><br />
+        I started my isp by working out the simple screen flow using buttons,
+        which I would latter switch out for mouse input. Once all of our screens
+        were created, I created a User Input class to control the input of the
+        game. The User Input class was linked back to the Main method by using a
+        JFrame parameter in it’s constructor. This means, that when an instance
+        of the User input class was created in the Main class, it required a
+        JFrame object. The Main class’s JFrame object was inserted as a
+        parameter, linking the two classes.
+        <br /><br />
+        This worked because, unlike primitive data types, when objects are
+        passed as a parameter, their reference is passed. The following
+        illustrates the concepts behind the shared JFrame Reference:
+      </p>
+
+      INSERT IMAGE
+
+      <p>
+        I used this same concept when creating my other classes and made it so
+        each of these classes were running in parallel rather than just
+        individually. This concept will make drawing on one JFrame between
+        classes a lot easier.
+      </p>
+
+      <h4 id=user-input>User Input</h4>
+
+      <p>
+        Without user input, a game is just an animation. When creating a game,
+        you need to decide how the user will interact with the game. In Java
+        swing, there are 3 main user input methods mouse input, key input, and
+        buttons. In my game, I use a mix of mouse and key input. To use multiple
+        mediums of input, two classes should be made, one to handle each type of
+        input. <br /><br />
+        When I started out my video game, I started out by working on trying to
+        integrate the different mediums of input. To use mouse and key inputs
+        the following library needs to be imported into your code:
+      </p>
+
+      <div class="example">
+        <code>
+          import java.awt.event.*;
+        </code>
       </div>
-  </div>
-</div>
 
-<div class="projects" id="projects">
-  <h1>Projects</h1>
-  <p>
-    Here are some of the projects I've worked on! Take a look:
-  </p>
-  <div class="row">
-    <div class="column1"><img src="background-img (6).svg"></div>
-    <div class="column2"><img src="background-img (6).svg"></div>
-    <div class="column3"><img src="background-img (6).svg"></div>
-    <div class="column1"><img src="background-img (6).svg"></div>
-    <div class="column2"><img src="background-img (6).svg"></div>
-    <div class="column3"><img src="background-img (6).svg"></div>
-  </div>
+      <p>
+        I decided to make most of the user input mouse based through clicks, and
+        the player movement in game two to use key input. Within the user input
+        class, there are two private classes. <br /><br />
+        Mouse Adapter:
+      </p>
 
-  <a href="projects.html">Wanna learn more?</a>
-</div>
+      <div class="example">
+        <code>
+          private class ML extends MouseAdapter{<br /><br />
 
-<div class="projects" id="lessons">
-  <h1>Lessons</h1>
-  <p>
-    Here are some tutorials for those who are learning Java:
-  </p>
-  <div class="row">
-    <div class="column1">
-      Object Oriented Programing 
-      <a href="OOP.html"> <img src="background-img (6).svg"></a>
-    </div>
-    <div class="column2"></div>
-      ArrayLists
-      <a href="ArrayLists.html"> <img src="background-img (6).svg"></a>
-    </div>
-    <div class="column3">
-      Arrays
-      <a href="Arrays.html"> <img src="background-img (6).svg"></a>
-    </div>
-    <div class="column1">
-      Search and Sort
-      <a href="SearchSort.html"> <img src="background-img (6).svg"></a>
-    </div>
-    <div class="column2">
-      Bringing it together
-      <a href="FinalProject.html"> <img src="background-img (6).svg"></a>
-    </div>
-  </div>
-</div>
-</main>
+          &nbsp;&nbsp;&nbsp;&nbsp;public void mouseClicked(MouseEvent e){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int x = e.getX();
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int y = e.getY();
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </code>
+      </div>
+
+      <p>
+        This class is used to evaluate any mouse input that the program receives
+        as it runs. When you only want to use one type of mouse input, its best
+        to make a private class that extends Mouse Adapter rather than having a
+        class implement an interface without using all of the methods.
+        <br /><br />
+        The next type of input method that you can use is Keyboard input. Often
+        times this input is used predominantly for player movement, but it can
+        be used for screen navigation as well.
+        <br /><br />
+        Key Adapter private class.
+      </p>
+
+      <div class="example">
+        <code>
+          private class AL extends KeyAdapter{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;public void keyReleased(KeyEvent e) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.keyReleased(e);
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void keyPressed(KeyEvent e){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.keyPressed(e);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+
+          }
+        </code>
+      </div>
+
+      <p>
+        As you can see in the code, the keyReleased and keyPressed methods are
+        being called from another an object in a different class. In this case,
+        the object is from the player class, where the methods keyReleased and
+        keyPressed are located.<br /><br />
+        Here are the methods:
+      </p>
+
+      <div class="example">
+        <code>
+          public void keyPressed(KeyEvent e){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int key = e.getKeyCode();<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;if(key == KeyEvent.VK_LEFT){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//implementation not
+          shown<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;if(key == KeyEvent.VK_RIGHT){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//implementation not
+          shown<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;if(key == KeyEvent.VK_UP){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//implementation not
+          shown<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;if(key == KeyEvent.VK_DOWN){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//implementation not
+          shown<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          }<br /><br />
+
+          public void keyReleased(KeyEvent e){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int key = e.getKeyCode(); <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;if(key == KeyEvent.VK_LEFT){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//implementation not
+          shown<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;if(key == KeyEvent.VK_RIGHT){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//implementation not
+          shown<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;if(key == KeyEvent.VK_UP){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//implementation not
+          shown<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;if(key == KeyEvent.VK_DOWN){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//implementation not
+          shown<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          }
+        </code>
+      </div>
+
+      <p>
+        Each key event represents a time when a key was pressed and key codes
+        (KeyEvent.VK_DOWN) identify the key that was pressed. When setting up
+        player movement, the most common key codes used are typically the arrow
+        keys or a-w-s-d.
+        <br /><br />
+        So far, you have only seen the private classes, but to really implement
+        these classes they need to have their objects instantiated. You can do
+        this in the constructor of your User Input class
+      </p>
+
+      <div class="example">
+        <code>
+          public UserInput(JFrame game, Vars screen){<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;this.game = game; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;this.screen = screen; <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;game.addMouseListener(new ML()); <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;game.addKeyListener(new AL()); <br />
+
+          }
+        </code>
+      </div>
+      <p>
+        To actually access inputs from peripherals, listeners need to be added
+        to the JFrame to get the input from the peripherals. Once all this is
+        setup, you can start getting input from the user to start the game.
+      </p>
+
+      <h4 id=collision>Collision:</h4>
+      <p>
+        Collison detection is a big part of many games. To detect collision,
+        many programmers use rectangle collision. This means that you set up a
+        rectangular field around whatever two object you want colliding and
+        check if any points on the rectangle cross over.
+      </p>
+      <div class="example">
+        <code>
+          private Boolean intersect(Object a, Object b){<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;return
+          (a.getX()>=b.getX()&&a.getX()&lt;=b.getX()+b.getWidth())&(a.getY()>=b.getY()&&a.getY()&lt;=b.getY()+b.getHeight())||(a.getX()+a.getWidth()>=b.getX()&&a.getX()+a.getWidth()&lt;=b.getX()+b.getWidth())&&(a.getY()+a.getHeight()>=b.getY()&&a.getY().getHeight()&lt;=b.getY()+b.getHeight());<br/>
+          }
+        </code>
+      </div>
+
+      <h4 id=graphics-animations>Graphics and Animations</h4>
+      <p>
+        Any and every game has graphics of some form or another. Lets take a
+        look at how to start applying graphics to your game. <br /><br />
+        There are two main ways that you can add graphics to your program: 1.
+        Make a class that extends JPanel or Create a JLabel object that embeds a
+        paintComponent method.
+        <br /><br />
+        If the Animation or Graphic that you want to create involves userinput,
+        its better to make a new class and track the userinput with an action
+        listener method as follows:
+      </p>
+
+      <div class="example">
+        <code>
+          import javax.swing.*; <br />
+          import java.awt.event.*;<br />
+          import javax.swing.Timer; <br /><br />
+
+          public JPanelPage extends JPanel implements ActionListener{<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;Timer timer; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;public JPanelPage (){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addKeyListener(new
+          AL()); <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer = new Timer(5,
+          this); <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer.start();<br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void actionPerformed(ActionEvent e){<br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//insert logic
+          statements<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void painComponent(Graphics g){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.painComponent();
+          <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//insert Graphics<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+
+          }
+        </code>
+      </div>
+
+      <p>
+        In this setup, you would draw all of the graphics in your paintComponent
+        method, and carryout all the logic in the actionPerfomed method. Unlike
+        the other event methods, the action performed method continuously checks
+        for input, and does not rely on any specific event to occur for it to
+        run. The paintComponent method should be used only for graphics and any
+        logic should be put into the actionPerformed method.
+        <br /><br />
+        To setup an animation a timer is needed to run the animation. As
+        displayed in the code above, the Timer object is initiated with 2
+        arguments. The first argument determines what interval the timer will
+        refresh, and the second is the object that the timer will operate in.
+        The start method starts the timer and the timer.stop method will stop
+        the timer.
+        <br /><br /><br />
+        For static drawings, you can imbed the paintComponent method when
+        initializing a JLabel to add onto your Jframe.
+      </p>
+
+      <div class="example">
+        <code>
+          JLabel label = new JLabel(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;public void paintComponenet(Graphics g){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.paintComponent(g);
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//insert graphics
+          commands<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };<br />
+        </code>
+      </div>
+
+      <p>To take a look at these concepts implemented, you can go here. </p>
     
-<footer>
-  <div class="contact" id="contact">
-    <h1>Get in touch!</h1>
-    <div>
-        <a href="https://github.com/aavaSapkota"><img src="github_PNG40.png" alt="github" width="50" height="50"/></a>
-        <a href="https://www.linkedin.com/in/aava-sapkota-584b3b175/"><img src="linkedin.png" alt="linkedin" width="50" height="50"/></a>
-        <a href="https://www.instagram.com/aava_s._/"><img src="instagram.png" alt="instagram" width="60" height="45"/></a>
-    </div>
-  </div>
-</footer>
+      <p>Further learning:</p>
+        <ul>
+          <li><a href="https://www.geeksforgeeks.org/array-vs-arraylist-in-java/#:~:text=An%20array%20is%20basic%20functionality,access%20elements%20and%20modify%20them.&text=Array%20is%20a%20fixed%20size%20data%20structure%20while%20ArrayList%20is%20not.">Array vs Arraylist in Java</a></li>
+          <li><a href="https://www.geeksforgeeks.org/arraylist-in-java/">Arraylists in Java</a></li>
+          <li><a href="https://www.geeksforgeeks.org/collections-in-java-2/">Collections in Java</a></li>
+        </ul>
+    </main>
 
-    
-
-
+    <footer>
+      <div class="contact" id="contact">
+        <h1>Get in touch!</h1>
+        <div>
+          <a href="https://github.com/aavaSapkota"
+            ><img src="github_PNG40.png" alt="github" width="50" height="50"
+          /></a>
+          <a href="https://www.linkedin.com/in/aava-sapkota-584b3b175/"
+            ><img src="linkedin.png" alt="linkedin" width="50" height="50"
+          /></a>
+          <a href="https://www.instagram.com/aava_s._/"
+            ><img src="instagram.png" alt="instagram" width="60" height="45"
+          /></a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

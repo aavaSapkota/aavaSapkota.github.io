@@ -61,8 +61,9 @@ html, body {
 .home {
   text-align:center;
   width: 100%;
-  height:;
+  height:auto;
   box-sizing:border-box;
+  vertical-align: auto;
 }
 
 .img-wrapper{
@@ -100,6 +101,21 @@ html, body {
   display: inline-block;
   font-size: 16px;
 }
+
+.bottom-bar{
+  padding:25px;
+  margin-top:5px;
+  background-color: #0d2b31ff;
+  color:white;
+}
+
+.bottom-bar a{
+  color:white;
+  text-decoration: none;
+
+}
+
+
 
 .intro {
   font-size: 20px;

@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="home-styles.css" />
     <link rel="stylesheet" href="about-styles.css" />
     <link rel="stylesheet" href="project-styles.css" />
-    <link rel="stylesheet" href="contact-styles.css"/>
+    <link rel="stylesheet" href="contact-styles.css" />
+    <link rel="stylesheet" href="tutorials-styles.css" />
 
     <link
       href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap"
@@ -27,35 +28,561 @@
           /></a>
         </div>
         <div class="main-nav">
-          <a href="#about">About Me!</a>
-          <a href="#lessons">Lessons</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="OOP.html">OOP</a>
+          <a href="Arrays.html">Arrays and ArrayLists</a>
+          <a href="SearchSort.html">Search and Sort</a>
+          <a href="FinalProject.html">Making a Game</a>
         </div>
       </div>
-
     </header>
-    
-    <main>
-    <h1>Object Oriented Programing </h1>
 
-    <p>Insert OOP Lesson and code</p>
+    <main class="main">
+      <h1>Object Oriented Programing</h1>
 
+      <h5>
+        Object Oriented Programing is the Programming style where program flow
+        is oriented around instances of classes. This is programing style is
+        kwon to be used by many higher level languages such as java, javascript,
+        python and c++. The concept behind object oriented program is surrounded
+        by the idea of treating instances of classes as objects and trying to
+        simulate real life behaviors through code. Object Oriented Programing
+        can be used to simulate both literal and abstract object. Lets dig in a
+        bit deeper.
+      </h5>
+
+      <h3>Prerequisites:</h3>
+      <ul>
+        <li><a href="https://www.geeksforgeeks.org/variables-in-java/">Variables</a></li>
+        <li><a href="https://www.geeksforgeeks.org/overloading-in-java/">Overloaded Methods</a></li>
+      </ul>
+
+      <h4>Classes and Objects</h4>
+      <p>
+        In java, nothing can run if it is not located within a class. Classes
+        are the blueprints that create the objects we know today. They provide
+        abstract fields that can be modified per object to create more realistic
+        representations of objects. To create an object class, you need to first
+        know the different aspects of the object that you are trying to create.
+        For example if I wanted to create a Monster class, I would have to think
+        about what kinds of things make up a monster. We can describe the
+        characteristics of the monster as attribute and the actions that change
+        the attributes behaviors. Translating all of this into more technical
+        terminology, the attributes can be represented by variables (also
+        referred to as fields) and the behaviors that change the attributes can
+        be represented with methods. <br />
+        <br />
+        Now that we have a basic idea as to what a class is, lets try to make
+        one! Lets start with our attributes.
+      </p>
+
+      <div class="example">
+        <code>
+          Attributes of a Monster: <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int eyes;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp; int legs; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int arms;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;String name; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;double energyLevel; <br /><br />
+          Behaviors of a Monster: <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;-Eat<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;-run <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;-growl<br />
+        </code>
+      </div>
+
+      <p>
+        In the list above we have highlighted the different attributes and
+        behaviors that monsters have that we want to represent in our program. 
+      </p>
+
+      <div class="example">
+        <code>
+          public class Monster{<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;private int eyes; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private int legs; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private int arms; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private String name; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private double energyLevel; <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public Monster(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eyes = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arms = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = “Ms.Monster”;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;energyLevel = 1000;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public Monster(int e, int l, int a, String
+          n){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eyes = e; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs = l; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arms = a; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = n; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;energyLevel = 1000;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </code>
+      </div>
+
+      <p>
+        Here in my class I have a few attributes of the monster declared
+        globally. There are also two constructors added. The purpose of the
+        constructor is to assign values to all of the attributes of the monster
+        object. As you can see in the no-argument constructor, each of the
+        attributes is given a value. This means that once an object is created,
+        it will have 2 eyes, 2 legs, 2 arms, will be named Ms.Monster, and have
+        a starting energy level of 1000. The other constructor has arguments
+        which allows the object to be customized. The constructor that is called
+        is dependent on what parameters are inserted when an object is
+        instantiated.
+        <br /><br />
+        Lets expand our class more and add methods. Methods are used to access
+        the attributes and simulate behavior of an object. Typically there are a
+        minimum of two methods relating to an attribute. These methods are
+        called accessors and mutators (getters and setters). The accessor
+        methods, get the values of the attributes and return them. The mutator
+        methods, change the value of the attributes. Lets add some accessors and
+        mutator methods into the class:
+      </p>
+
+      <div class="example">
+        <code>
+          public class Monster{<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;private int eyes; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private int legs; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private int arms; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private String name; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private double energyLevel; <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public Monster(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eyes = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arms = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = “Ms.Monster”;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;energyLevel = 1000;
+          <br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getEyes(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return eyes; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setEyes(int e){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eyes = e; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getLegs(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return legs; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setLegs(int l){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs = l; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getArms(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return arms;
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setArms(int a){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arms = a; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getName(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return name; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setName(int n){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = n; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getEnergyLevel(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return energyLevel;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          }
+        </code>
+      </div>
+
+      <p>
+        Did you notice something? Not all the attributes have both get and set
+        methods. All of the attributes have get methods, however energyLevel
+        does not have a set method. This illustrates the security benefits of
+        making instance variables private and using get and set methods to
+        access the variables. The lack of a set method for the energy level
+        attribute prevents direct tampering with the variable.
+        <br /><br />
+        Lets move on to the behavior methods. Each of these methods are designed
+        to also change meant to change the attributes, or other changes to the
+        program. Lets add in some behavioural methods:
+      </p>
+
+      <div class="example">
+        <code>
+          public class Monster{<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;private int eyes; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private int legs; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private int arms; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private String name; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private double energyLevel; <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public Monster(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eyes = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arms = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = “Ms.Monster”;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;energyLevel = 1000;
+          <br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void eat(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;energyLevel+=10;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void run(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;energyLevel-=50;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void growl(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(“Grrrr…”);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getEyes(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return eyes; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setEyes(int e){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eyes = e; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getLegs(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return legs; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setLegs(int l){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs = l; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getArms(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return arms; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setArms(int a){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arms = a; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getName(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return name; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setName(int n){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = n; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getEnergyLevel(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return energyLevel;
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public String toString(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return “Name: ”
+          +name+“ Eyes: ” +eyes+“ Legs: ” +legs+ “ Energy Level: ”
+          +energyLevel;<br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          }
+        </code>
+      </div>
+
+      <p>
+        The last method in this class is called a toString method. It is used to
+        output a String that has all of the states of the instance variables.
+        The toString method automatically is called when an object is printed.
+        Without overloading the toString constructor, the object’s location in
+        memory would be printed when the object is printed.
+        <br /><br />
+        As shown in the code above, the behavioral methods have been added, and
+        now, we have a full class! Now we can make all sorts of monsters! To do
+        this, we need a class with a main method. This class is called the
+        driver class and it controls the whole program.
+      </p>
+
+      <div class="example">
+        <code>
+          public class MonsterTester{<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[]){<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monster monster1 = new
+          Monster(); <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monster monster2 = new
+          Monster(2,1,4, “Darel”);<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monster1.eat(); <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monster2.run();
+          <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monster1.growl();
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monster2.growl();<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(monster1);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(monster2);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          }
+        </code>
+      </div>
+
+      <p>
+        In this tester class, two objects are instantiated, and the behavioural
+        methods are called, all found inside the main method. Each program can
+        only have one main method that runs the whole program. The output of
+        this program is the following:
+      </p>
+
+      <div class="example">
+        <code>
+          Grrrr…<br />
+          Grrrr…<br />
+          Name: Ms.Monster Eyes: 2 Legs: 2 Arms: 2 Energy Level: 1010<br />
+          Name: Darel Eyes: 2 Legs: 1 Arms: 4 Energy Level: 950;<br />
+        </code>
+      </div>
+
+      <h4>Inheritance:</h4>
+      <p>
+        In the section above, we made a Monsters class to tailor to Monsters.
+        However, our class was really mostly directed towards land monsters,
+        with their legs and arms. We need to expand our Universe and make more
+        monsters, but we don’t want to completely start over, because many sea
+        monsters have similar attributes as land monsters. Instead we are going
+        to use the idea of inheritance to create a sea monsters’ class.
+        <br /><br />
+        The idea of inheritance is based on the idea of super and sub classes.
+        In this case, the monster class would be considered the superclass and
+        the sea monsters class will be seen as the subclass. The subclass will
+        inherit all the public methods from the super class, so this means we
+        don’t have to rewrite all of those get and set methods! The relationship
+        between the super and sub class is called a IS-A relationship, because a
+        sea monster IS-A monster. Lets start building the sea monsters class.
+        What are some things that only sea monsters have?
+      </p>
+
+      <div class="example">
+        <code>
+          Sea Monster Attributes: <br />
+          -Fins<br />
+          -Gills<br /><br />
+
+          Sea Monster Behaviors<br />
+          -swim<br />
+        </code>
+      </div>
+
+      <p>
+        Now lets make the Sea Monsters class. To make the Sea monsters class a
+        sub class of the Monsters class, the keyword extends needs to be added
+        in the class header.
+      </p>
+
+      <div class="example">
+        <code>
+          public class SeaMonsters extends Monsters{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private int gills; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private int fins; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;public SeaMonsters(){<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(); <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gills = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fins = 4; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getGills(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return gills; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setGills(int g){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gills = g; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp; public int getFi ns(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return fins; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setFins(int f){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fins = f; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void swim(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run();<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public String toString(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return “Name: ”
+          +getName() +“ Eyes: ” +getEyes()+“ Fins: ” +fins+ “ Gills: ” +gills+ “
+          Energy Level: ” +energyLevel;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          }
+        </code>
+      </div>
+
+      <p>
+        In the constructer of the SeaMonsters class, the method super must be
+        called, so that the super classes constructor can be used to initialize
+        the attributes that are not present in the Sea Monsters class. There is
+        also a new two String method to reflect the new variables.
+        <br /><br />
+        Lets make an instance of our new SeaMonsters class in the driver class:
+      </p>
+
+      <div class="example">
+        <code>
+          public class MonsterTester{<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[]){<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monster monster1 = new
+          Monster(); <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monster monster2 = new
+          Monster(2,1,4, “Darel”);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeaMonsters
+          seaMonster1 = new SeaMonster(); <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monster1.eat(); <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monster2.run(); <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seaMonster.swim();<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monster1.growl();
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monster2.growl();<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(monster1);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(monster2);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(seaMonster);<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </code>
+      </div>
+
+      <p>The output for the updated driver class would be:</p>
+
+      <div class="example">
+        <code>
+          Grrrr…<br />
+          Grrrr…<br />
+          Name: Ms.Monster Eyes: 2 Legs: 2 Arms: 2 Energy Level: 1010<br />
+          Name: Darel Eyes: 2 Legs: 1 Arms: 4 Energy Level: 950<br />
+          Name: Ms.Monster Eyes: 2 Legs: 2 Fins: 4 Gills: 2 Energy Level: 950<br />
+        </code>
+      </div>
+
+      <h4>Polymorphism</h4>
+      <p>
+        The final step to our tutorial on OOP programing is the concept of
+        polymorphism. Polymorphism is the concept of treating objects that are
+        different the same. In the concept on OOP programing, it is when a
+        subclass duplicates a method from the super class, but changes it’s
+        content. That means, that when that method is called with an object from
+        the subclass, the method in the subclass will override the superclass
+        duplicated method. Lets see how this affects our monsters. <br /><br />
+        In the monster class, there is a method called growl that prints the
+        statements: “Grrrr…”. While this would be accurate for Land Monsters,
+        when Sea monsters growl, it sounds more like “griss…”. Lets go back to
+        our Sea Monsters class.
+      </p>
+      <div class="example">
+        <code>
+          public class SeaMonsters extends Monsters{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private int gills; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;private int fins; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;public SeaMonsters(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(); <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gills = 2; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fins = 4; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getGills(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return gills; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setGills(int g){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gills = g; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public int getFins(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return fins; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void setFins(int f){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fins = f; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public void swim(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run();<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;public void growl(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(“Grisss…”);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;public String toString(){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return “Name: ”
+          +getName() +“ Eyes: ” +getEyes()+“ Fins: ” +fins+ “ Gills: ” +gills+ “
+          Energy Level: ” +energyLevel;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+
+          }
+        </code>
+      </div>
+
+      <p>
+        Here, you can see the new growl method is added. This means that when we
+        call it with a SeaMonsters object, it will print out “Grisss…” instead
+        of “Grrrr…”.
+      </p>
+
+      <p>Further learning:</p>
+        <ul>
+          <li><a href="https://www.geeksforgeeks.org/oops-object-oriented-design/">Object Oriented Design</a></li>
+        </ul>
     </main>
-    
-<footer>
-  <div class="contact" id="contact">
-    <h1>Get in touch!</h1>
-    <div>
-        <a href="https://github.com/aavaSapkota"><img src="img/github_PNG40.png" alt="github" width="50" height="50"/></a>
-        <a href="https://www.linkedin.com/in/aava-sapkota-584b3b175/"><img src="img/linkedin.png" alt="linkedin" width="50" height="50"/></a>
-        <a href="https://www.instagram.com/aava_s._/"><img src="img/instagram.png" alt="instagram" width="60" height="45"/></a>
-    </div>
-  </div>
-</footer>
 
-    
-
-
+    <footer>
+      <div class="contact" id="contact">
+        <h1>Get in touch!</h1>
+        <div>
+          <a href="https://github.com/aavaSapkota"
+            ><img
+              src="img/github_PNG40.png"
+              alt="github"
+              width="50"
+              height="50"
+          /></a>
+          <a href="https://www.linkedin.com/in/aava-sapkota-584b3b175/"
+            ><img src="img/linkedin.png" alt="linkedin" width="50" height="50"
+          /></a>
+          <a href="https://www.instagram.com/aava_s._/"
+            ><img
+              src="img/instagram.png"
+              alt="instagram"
+              width="60"
+              height="45"
+          /></a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

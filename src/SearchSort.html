@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="about-styles.css" />
     <link rel="stylesheet" href="project-styles.css" />
     <link rel="stylesheet" href="contact-styles.css" />
+    <link rel="stylesheet" href="tutorials-styles.css" />
 
     <link
       href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap"
@@ -23,19 +24,471 @@
       <div class="topnav">
         <div class="title-nav">
           <a href="index.html"
-            ><img src="Personal Logo (1).svg" alt="Personal-Logo"
+            ><img src="img/Personal Logo (1).svg" alt="Personal-Logo"
           /></a>
         </div>
         <div class="main-nav">
-          <a href="#contact">Contact</a>
-          <a href="#projects">Projects</a>
-          <a href="#lessons">Lessons</a>
-          <a href="#about">About Me!</a>
+          <a href="OOP.html">OOP</a>
+          <a href="Arrays.html">Arrays and ArrayLists</a>
+          <a href="SearchSort.html">Search and Sort</a>
+          <a href="FinalProject.html">Making a Game</a>
         </div>
       </div>
     </header>
 
-    <main></main>
+    <main class="main">
+      <h1>Sort and Search</h1>
+
+      <h3>
+        Knowing how to sort and search through data is a vital tool to have in
+        your arsenal of skills, especially for a programmer. Often time to use
+        data, it first needs to be synthesizes by sorting, and then only can you
+        search for the elements that you are looking for. In this tutorial, we
+        will explore the different methods used to sort and search through data.
+      </h3>
+
+      <h3>Prerequisites:</h3>
+      <ul>
+        <li><a href="Arrays.html">Arrays and Arraylists</a></li>
+        <li>
+          <a href="https://www.geeksforgeeks.org/loops-in-java/">Loops</a>
+        </li>
+        <li>
+          <a href="https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/recursion"
+            >Recursion (only for the last searching and sorting algorithms</a
+          >
+        </li>
+      </ul>
+
+      <h2>SORT</h2>
+
+      <p>
+        When given large masses of unsorted data, it can be very difficult to
+        use. Sorting Data is what helps to make it useable. In computer science
+        there are many different sorting algorithms that are used. In this
+        tutorial, I’m going to go over a few of them: Bubble sort, Insertion
+        sort, and Merge sort, as well as look into the measure of time that
+        reflects each algorithm’s efficiency.
+      </p>
+
+      <div class="disclaimer">
+        <p>
+          DISCLAIMER: Throughout this tutorial, I will be sorting a list from
+          smallest to largest.
+        </p>
+      </div>
+
+      <div class="time-complexity">
+        <h3><strong>O(n) time:</strong></h3>
+        <p>
+          If you scour the web in search of algorithm tutorials, you are almost
+          guaranteed to come across this notation. Big O notation is what many
+          computer scientists and programmers use to measure how long it would
+          take an algorithm to finish sorting a data set in the worst case
+          scenario. The n in the notation is the size of the list. In this
+          tutorial we will be talking about O(n^2) time and O(n*log(n)) time.
+          <br /><br />
+          O(n) time: This means that the program only access each element
+          once.<br /><br />
+          O(n^2) time: This means that the algoritjm access the elements n^2
+          times.<br /><br />
+          O(n*log(n)) time: This means that the algorithm access the elements
+          n*log(n) time.<br /><br />
+          Big O notation describes time complexity. <br /><br />
+          Want more info? Click here
+        </p>
+      </div>
+
+      <h4>Bubble Sort:</h4>
+
+      <p>
+        In bubble sort, each adjacent element in a data list is compared and
+        swapped if the are not in the correct order. The program continuously
+        does this until all the elements are sorted.
+      </p>
+
+      *INSERT BUBBLE SORT GIF
+
+      <p>
+        Look closely at this animation, what do you notice?<br /><br />
+        If you noticed that after each iteration through the array, the largest
+        element was always moved to the back, then you would be correct. If not…
+        well now you know. The this with bubble sort is that it always compares
+        if each element to the right is larger to than the element on the left.
+        This means that once it finds the largest value in the list, it will
+        continuously swap that element down, because there will be no element
+        larger that it. This means that after each iteration, at least one value
+        will be put in it’s correct place. If the algorithm access each element
+        n times (size of the array), then that means that the time complexity is
+        O(n^2).<br /><br />
+        Here is the code for bubble sort: <br />
+      </p>
+
+      <div class="example">
+        <code>
+          public int [] bubbleSort(int [] array){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;for(int i=0; i&lt;array.length-1;i++){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int j=0;
+          j&lt;array.length-1-i; j++){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(array[j]>array[j+1]){
+          //check for mismatch<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//swap
+          the mismatched elements<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int
+          temp = array[j+1];<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[j+1]=array[j];<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[j]=temp;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return array; <br />
+          }
+        </code>
+      </div>
+      <p>
+        Lets break down the code here. As you can see, we have two loops. The
+        outer loop runs array.length-1, and the inner loop runs array.length-1-i
+        times. The outer loop needs to run one less than the length of the array
+        because, in the body of the smaller loop, there array[j+1] is being
+        accessed. Without the -1 in the outer loop and inner loop, there would
+        be an index out of bounds exception. Continuing on, we can clearly see
+        that the outer loop runs so all the elements can be accessed n times
+        (the length of the array --&gt; refer to Big O box above). Finally, once
+        all the elements are sorted, the sorted array is returned. This
+        algorithm is good to use for smaller data sets, due to the exponential
+        nature of it’s time complexity.
+      </p>
+
+      <h4>Insertion Sort:</h4>
+
+      <p>
+        Insertion Sort is like Bubble sort in many ways, however, instead of
+        running through the entire array each iteration, once insertion sort
+        finds something that is in the wrong place, it will continuously swap
+        that element until it is in the proper place. Bubble sort will get the
+        largest value and move it to the back first, whereas insertion sort will
+        move the smallest value to the front first.
+      </p>
+
+      INSERTION SORT GIF
+
+      <p>
+        As mentioned above, insertion sort will sort from the front back, so
+        each iteration of the for loop will place one element in the correct
+        place. This sorting algorithm has a time complexity of O(n^2), because
+        each element is accessed a maximum of n times.<br /><br />
+
+        Here is the code for insertion sort:
+      </p>
+
+      <div class="example">
+        <p>
+          public int [] insertionSort(int [] array){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int n = array.length; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;for(int i=1; i&lt;n;i++){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int value= array[i];
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int j = i - 1;
+          <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//move misplaced
+          element until it reaches correct location<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (j >= 0 &&
+          array[j] >value) { <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[j
+          + 1] = value[j]; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j
+          = j - 1; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[j + 1] =value;
+          //insert element into correct location<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return array; <br />
+          }
+        </p>
+      </div>
+
+      <p>
+        In this code segment, we see the outer loop running through the array n
+        times, and the inner while loop running until the correct location for
+        the element at i is at it’s correct location. The variable value stores
+        the currect value, and the variable j stores the current value to be
+        checked. Both these variables are used in the while loop to make sure
+        that the program does not go out of bounds (j>=0) and the checks that
+        the value is not yet in the correct position (array[j]>value). Once that
+        position is found, the program inserts the element into the correct
+        position. Once the array is sorted, the returned in a sorted array. This
+        algorithm is good to use for smaller data sets, due to the exponential
+        nature of it’s time complexity.
+      </p>
+
+      <h4>Merge Sort:</h4>
+
+      <p>
+        Merge sort is a divide and conquer algorithm that breaks down the whole
+        list into smaller chunks, sorts the chunks and then merges the chunks
+        together. Out of all the algorithms discussed so far, Merge sort is by
+        far the fastest. <br /><br />
+        Merge sort continuously splits the array/arraylist in half until, each
+        element is in it’s own array. It then merges these smaller arrays and
+        sorts them accordingly so that the final merged array is sorted. It uses
+        2 functions to do this, the merge function and the sort function. The
+        following diagram from Wikipedia illustrates this:
+      </p>
+
+      <img src="img/MergeSort diagram.svg" />
+
+      <p>
+        As you can see from the diagram, the array is first continuously split
+        into half until each subarray is considered sorted. An subarray is
+        considered sorted if all of it’s elements are in the correct place. The
+        easiest way to get to a point where the program is certain that all the
+        split arrays are sorted is when, each subarray only contains one value.
+        Once the program reaches this point, it will start to merge all of it’s
+        array segments. This is all done through recursion, which will be shown
+        in the code below. The program merges back all of the arrays by
+        comparing two adjacent sorted subarrays. It checks the front of the
+        subarray, and compares it with the front of the second subarray. If the
+        first subarray has a smaller value than the second subarray value, then
+        it will be placed into the new merge array first. The front values of
+        each subarray will be continuously compared and added as described until
+        one subarray runs out of elements. In this event, the subarray which
+        still has elements, will have all of it’s remaining elements added to
+        the new merged array. This process continues recursively until there is
+        one sorted array. <br /><br />
+
+        The following is the code for merge sort:
+      </p>
+
+      <div class="example">
+        <code>
+          // sort recursive function <br />
+          public void sort(int arr[], int l, int r) { <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (l &lt; r) { <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Find the middle
+          point <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int m = (l + r) / 2;
+          <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Sort first and
+          second halves <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sort(arr, l, m);
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sort(arr, m + 1, r);
+          <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Merge the sorted
+          halves <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;merge(arr, l, m, r);
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+          } <br /><br /><br />
+
+          //l: starting index of array, m: middle index, r: ending index<br />
+          public void merge(int array[], int l, int m, int r){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;// find sizes of two subarrays <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int n1 = m - l + 1; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int n2 = r - m; <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;//Create temp arrays <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int L[] = new int[n1]; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int R[] = new int[n2]; <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;//Copy data to temp arrays<br />
+          &nbsp;&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; n1; ++i) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L[i] = array[l + i];
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp; }<br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;for (int j = 0; j &lt; n2; ++j) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R[j] = array[m + 1 +
+          j]; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp; }<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;// Merge the temp arrays <br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;// Initial indexes of first and second
+          subarrays <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int i = 0, j = 0; <br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;// Initial index of merged subarry array
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int k = 0; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;while (k &lt; array.length){<br /><br />
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (i &lt; L.length
+          && j &lt; R.length) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(L[i]
+          > R[j]) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[x]=
+          L[i];<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          i++;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else
+          {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[x]=
+          R[j];<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j++<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          k++;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (i ==
+          L.length){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for
+          (int x = j; x &lt; R.length; x++) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(k
+          == array.length) break;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[k]
+          = R[x];<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k++;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for
+          (int x = i; x &lt; L.length; x++) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+          (k == array.length) break;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[k]
+          = L[x];<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          k++;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+          }
+        </code>
+      </div>
+
+      <p>
+        The merge sort algorithm is comprised of 2 methods, the sort method,
+        that continuously divides the array into subarrays, and merge, which
+        merges and sorts the subarrays. The algorithm starts in the sort method.
+        In this method, sort is called recursively, spliting the array into
+        halves until the array is divided into n (length of array) parts. For
+        more on recursion, visit this link. <br /><br />Once all the array has
+        been divided into the different sections, now the merge function comes
+        in and merges all of the subarray pairs. In the merge function, it takes
+        in the starting index for the array, the middle index for the array
+        (where the array splits into two sub arrays), and a ending index. The
+        function uses these parameters to store those parts of the array into
+        two temporary arrays. The temporary array then stores the sorted values,
+        of each array, which are then inserted back into the original array in
+        the correct order. This continues until all the array values are filled,
+        and the array is sorted. <br /><br />This algorithm has a time
+        complexity of O(n*log(n)) time, because it access each of the elements a
+        maximum of n*log(n) times. This algorithm is great for programs with
+        large data sets. <br /><br />
+      </p>
+
+      <h2><em>SEARCH:</em></h2>
+
+      <p>
+        Once your data is sorted, its time to find your data! There are many
+        different algorithms that you can use to search for data. The following
+        will illustrate two common algorithms used.
+      </p>
+
+      <h4>Linear Search</h4>
+      <p>
+        This algorithm involves checking each value in a list until you find the
+        element you are looking for. This has a time complexity of O(n) because
+        it checks each element at most once, and then exits when it finds what
+        it is looking for.
+
+        <br /><br />Here is the code for the sorting:
+      </p>
+
+      <div class="example">
+        <code>
+          public int insertionSort(int [] array, int target){
+          &nbsp;&nbsp;&nbsp;&nbsp;for(int i=0; i&lt;array.length;i++){
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(array[i]==target)
+          return i; &nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;return -1;
+          }
+        </code>
+      </div>
+
+      <p>
+        For linear search, all that is needed is one for loop to run through the
+        array once, because the target is guaranteed to be found in that one
+        loop. This algorithm is good to use for small to moderate datasets.
+      </p>
+
+      <h4>Binary Search</h4>
+
+      <p>
+        Binary search is a recursive searching algorithm that searches through a
+        sorted array by checking only half of a subarray at a time for the
+        target. Each iteration removes half of the array from being checked
+        which allows for a faster time complex. <br /><br />
+
+        A binary searchstarts by starting checking the index in the middle of
+        the array. It checks to see if that value is greater than or less than
+        the target value. If the middle index value is greater than the target
+        value, the algorithm discards the right side of the array and searches
+        for the middle of the left side of the array and continues. Essentially,
+        with each call of the search method, one half of subarray is removed.
+        Below is a visual example of Binary search.
+      </p>
+
+      <img src="img/Binary search diagram.svg" />
+
+      <p>Here is the code for binary search:</p>
+
+      <div class="example">
+        <code>
+          public static int search(int[] arry, int high, int low, int
+          target){<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int middle = (high+low)/2;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if(low>high)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return -1;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if(arry[middle]==target)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return middle;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if(arry[middle]>target)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return search(arry,
+          middle-1, low, target); <br />&nbsp;&nbsp;&nbsp;&nbsp;else
+          if(arry[middle]&lt;target)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return search(arry,
+          high, middle+1, target);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return -1; <br />}
+        </code>
+      </div>
+
+      <p>
+        In this method, the middle index of each subarray is calculated, and the
+        method stops when the lower index checkpoint is larger than the higher
+        checkpoint indicating that the target is not in the array. This
+        searching algorithm has a time complexity of O(log(n)) where log is base
+        2. This is one of the fastest searching algorithms because it is able to
+        eliminate entire halves of searchable elements, making it great for
+        larger data types.
+      </p>
+
+      <p>
+        There are many other searching and sorting algorithms. You can learn
+        about some more, down in the further learning section.
+      </p>
+
+      <p>Further learning:</p>
+      <ul>
+        <li>
+          <a href="https://www.geeksforgeeks.org/searching-algorithms/"
+            >Different Searching Algorithms</a
+          >
+        </li>
+        <li>
+          <a href="https://www.geeksforgeeks.org/sorting-algorithms/"
+            >Different Sorting algorithms/a
+          >
+        </li>
+        <li>
+          <a href="https://www.geeksforgeeks.org/collections-in-java-2/"
+            >Collections in Java</a
+          >
+        </li>
+      </ul>
+    </main>
 
     <footer>
       <div class="contact" id="contact">

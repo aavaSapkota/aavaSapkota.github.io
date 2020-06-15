@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="about-styles.css" />
     <link rel="stylesheet" href="project-styles.css" />
     <link rel="stylesheet" href="contact-styles.css" />
+    <link rel="stylesheet" href="tutorials-styles.css" />
 
     <link
       href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap"
@@ -27,15 +28,15 @@
           /></a>
         </div>
         <div class="main-nav">
-          <a href="index.html">About Me!</a>
-          <a href="#lessons">Lessons</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="OOP.html">OOP</a>
+          <a href="Arrays.html">Arrays and ArrayLists</a>
+          <a href="SearchSort.html">Search and Sort</a>
+          <a href="FinalProject.html">Making a Game</a>
         </div>
       </div>
     </header>
 
-    <main>
+    <main class = "main">
       <h1>Arrays and Arraylists</h1>
 
       <h5>
@@ -47,11 +48,9 @@
 
       <h3>Prerequisites:</h3>
       <ul>
-        <li>Primitive data types</li>
-        <li>Strings</li>
-        <li>Variables</li>
-        <li>For Loops</li>
-        <li>For-Each Loops</li>
+        <li><a href="https://www.geeksforgeeks.org/strings-in-java/">Strings</a></li>
+        <li><a href="https://www.geeksforgeeks.org/variables-in-java/">Variables</a></li>
+        <li><a href="https://www.geeksforgeeks.org/loops-in-java/">Loops</a></li>
       </ul>
 
       <h2><em>ARRAYS</em></h2>
@@ -74,13 +73,13 @@
         you can create an array:
       </p>
 
-      <div class="examples">
+      <div class="example">
         <ol>
-          <li>Data_type [] array_name = new Data_type[length_of_array];</li>
+          <li><code>Data_type [] array_name = new Data_type[length_of_array];</code></li>
 
-          <li>Data_type [] array_name = {elements, separated, by, commas};</li>
+          <li><code>Data_type [] array_name = {elements, separated, by, commas};</code></li>
 
-          <li>Data_type [] array_name;</li>
+          <li><code>Data_type [] array_name;</code></li>
         </ol>
       </div>
 
@@ -127,7 +126,7 @@
       </p>
 
       <div class="example">
-        <p>arrayName[index]</p>
+        <code>arrayName[index]</code>
       </div>
 
       <p>
@@ -155,7 +154,7 @@
       <p>To change or initialize an array the following code is used:</p>
 
       <div class="example">
-        <p>array[index]=newValue;</p>
+        <code>array[index]=newValue;</code>
       </div>
 
       <p>
@@ -168,17 +167,17 @@
       </p>
 
       <div class="example">
-        <p>
+        <code>
           int [] numbers = new int[10]; <br />
           for(int i=0; i&lt;10){<br />
           &nbsp;&nbsp;&nbsp;&nbsp;numbers[i]=(int)(Math.random()*10+1);<br />
           }<br />
-        </p>
+        </code>
       </div>
 
       <p>
         Notice how the for loop only goes through the values 0-9. If the for
-        loop went started at 1 and ended at 10, the program would retrun an
+        loop went started at 1 and ended at 10, the program would return an
         IndexOutOfBounds exception, because we would be trying to access index
         10, when there is no index 10.
       </p>
@@ -196,7 +195,7 @@
       </p>
 
       <div class="example">
-        <p>
+        <code>
           public class Classroom{<br />
 
           &nbsp;&nbsp;&nbsp;&nbsp;public static void main (String args[]){<br />
@@ -234,7 +233,7 @@
           &nbsp;&nbsp;&nbsp;&nbsp;}<br />
 
           }<br />
-        </p>
+        </code>
       </div>
 
       <p>
@@ -246,7 +245,7 @@
       </p>
 
       <div class="example">
-        <p>
+        <code>
           public class Classroom{<br /><br />
 
           &nbsp;&nbsp;&nbsp;&nbsp;public static void main (String args[]){<br />
@@ -256,7 +255,7 @@
           &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
 
           }
-        </p>
+        </code>
       </div>
 
       <p>
@@ -267,7 +266,7 @@
       </p>
 
       <div class="example">
-        <p>
+        <code>
           public class Classroom{<br /><br />
 
           &nbsp;&nbsp;&nbsp;&nbsp;public static void main (String args[]){<br />
@@ -282,20 +281,14 @@
           &nbsp;&nbsp;&nbsp;&nbsp;}<br />
 
           }
-        </p>
+        </code>
       </div>
 
       <p>
         As you can see, this code is much shorter than our original code, and
         gets the same job done. If you look closely at this code, you will see
-        that in the for loop, the ending condition is
-      </p>
-      <div class="in-text">
-        i&lt;studentNames.length
-      </div>
-
-      <p>
-        . Just like how you can use .length() to get the length String variable,
+        that in the for loop, the ending condition is <code>i&lt;studentNames.length</code>
+. Just like how you can use .length() to get the length String variable,
         the same can be done with arrays. However, instead of using a method
         (.length()), arrays use a field (variable) to get their length. This
         means that instead of going through your program trying to remember the
@@ -320,7 +313,7 @@
       </p>
 
       <div class="example">
-        <p>Import java.util.*;</p>
+        <code>import java.util.*;</code>
       </div>
 
       <h4>Declaring Arraylists</h4>
@@ -335,10 +328,12 @@
 
 
       <div class = "example">
+        <code>
         <ol>
           <li>ArrayList&lt;Object_Class&gt; arrayListName = new ArrayList&lt;Object_Class&gt;();</li>
           <li>ArrayList<Object_Class> arrayListName;</li> 
         </ol>
+      </code>
       </div>
 
       <p>As you can see, these two declarations look fairly similar to the array declarations above. However, since array lists don’t have a specified size, no size needs to be specified when declaring the arraylist. If you do want to specify the size of an array list, it can be done by placing the size in the curved brackets in the first declaration option. However, this is almost never done, as it remove the dynamic component of the arraylist. </p>
@@ -371,20 +366,20 @@
 
       <p>Unlike Arrays, there is only one way to initialize an Arraylist: </p>
 
-      <div class="example"> <p>arraylist=new ArrayList&lt;Object_Class&gt;();</p></div>
+      <div class="example"> <code>arraylist=new ArrayList&lt;Object_Class&gt;();</code></div>
 
       <p>Once an arraylist is initialized, all of it’s values are set to null (because they are all objects, rather than primitive data types. Arraylists are similar to Strings in the sense that they both require methods to access their values. Here are a list of Array list methods and their uses: </p>
 
 
       <div class="example">
-        <p>arraylist.get(index); // &lt;- returns the object at the specified index
+        <code>arraylist.get(index); // &lt;- returns the object at the specified index
           arraylist.set(index, newValue); // &lt;- sets the object at the index with the 
                                              new object
           arraylist.size(); // &lt;- returns the size of the list
           arraylist.remove(index); // &lt;- removes the object at index
           arraylist.add(newValue); // &lt;- adds newValue to the end of the list
           arraylist.add(index, newValue);// &lt;- inserts newValue at index. 
-          </p>
+        </code>
       </div>
 
       <p>Like arrays, arraylists can have their values modified, however, arraylists are more secure because they use methods to access the objects. This means that any data that is supposed to stay private can. </p>
@@ -395,6 +390,7 @@
       <p>Lets continue on with the previous example of the classroom. Throughout the year, new students will be arriving, but if a new student comes in, we won’t be able to add their name to the class list without making a whole new array. Instead of doing this, lets make the class list into an array list. This way, we can add in any new students that may come into the class. </p>
 
       <div class="example">
+        <code>
         import java.util.*;<br/>
 public class Classroom{<br/><br/>
 
@@ -418,13 +414,18 @@ public class Classroom{<br/><br/>
 
 
       &nbsp;&nbsp;&nbsp;&nbsp;}
-
+    </code>
 }
 
       </div>
 
       <p>While this code is longer, in the long run, it is much more secure and it will be easier to make modifications to the list rather than if it was an array. </p>
 
+        <p>Further learning:</p>
+        <ul>
+          <li><a href="http://www.edu4java.com/en/game/game1.html">Arraylists in Java</a></li>
+          <li><a href="https://www.geeksforgeeks.org/collections-in-java-2/">Collections in Java</a></li>
+        </ul>
 
 
     </main>
