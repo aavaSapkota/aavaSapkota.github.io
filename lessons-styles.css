@@ -31,7 +31,7 @@
   padding: 10px;
 }
 .column1 {
-  flex: 25%;
+  flex: 15%;
   padding: 10px;
 }
 
@@ -40,7 +40,7 @@
   vertical-align: left;
 }
 .column2 {
-  flex: 25%;
+  flex: 15%;
   padding: 10px;
 }
 
@@ -49,7 +49,7 @@
   vertical-align: middle;
 }
 .column3 {
-  flex: 25%;
+  flex: 15%;
   padding: 10px;
 }
 

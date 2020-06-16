@@ -29,31 +29,22 @@
 .row{
   display: flex;
   flex-wrap: wrap; 
-  padding: 10px; 
+  padding: 30px; 
 }
-.column1{
-  flex:30%; 
+
+.column{
+  flex:15%;
   padding: 10px;
 }
 
-.column1 img{
-  margin-top: 8px; 
-  vertical-align: left;
-}
-.column2{
-  /* flex:30%; */
-  padding: 10px;
-}
-
-.column2 img{
+.column img{
   margin-top: 8px; 
   vertical-align: middle;
   padding-bottom:20px;
   height: auto;
-  max-width: 50%;
 }
 
-.column2 h3{
+.column h3{
   font-size: 30px;
   font-family: 'Staatliches', cursive;
 }
