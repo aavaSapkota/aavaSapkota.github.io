@@ -1,9 +1,10 @@
-.wrapper {
-  width: 100vh;
-  height:auto;
-  
-}
 
+
+.abt-wrapper{
+  display:flex; 
+  width: 100%;
+  height:auto;
+}
 .about {
   text-align: center;
   color: white;
@@ -12,7 +13,6 @@
   padding-left: 30px;
   margin: 30px;
   padding-bottom: 50px;
-  display: block;
 }
 
 .about h1 {
@@ -21,8 +21,9 @@
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 40px;
 }
+
 .about-me{
-  float:left; 
+  float:center; 
   padding-top: 5px;
   font-size: 17px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -30,12 +31,5 @@
   text-align: left;
 }
 
-.cartoon-p{
-  float:right; 
-}
-
-.about-flex-container{
-  /* display: flex;  */
-}
 
 

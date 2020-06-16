@@ -49,6 +49,8 @@
   margin-top: 8px; 
   vertical-align: middle;
   padding-bottom:20px;
+  height: auto;
+  max-width: 50%;
 }
 
 .column2 h3{

@@ -3,7 +3,8 @@ html, body {
   height: 100vh;
   padding: 0;
   overflow-x: hidden;
-  /* background-color: #fff; */
+  
+  background-color: #d9e4dc;
 }
 
 .topnav {
@@ -53,10 +54,7 @@ html, body {
   color: white;
 }
 
-.abt-wrapper{
-  /* float:center; */
-  display:flex; 
-}
+
 
 .home {
   text-align:center;
@@ -103,9 +101,10 @@ html, body {
 }
 
 .bottom-bar{
+  font-size: 35px;
   padding:25px;
   margin-top:5px;
-  background-color: #0d2b31ff;
+  background-color: rgb(38, 130, 148);
   color:white;
 }
 

@@ -122,7 +122,22 @@
         illustrates the concepts behind the shared JFrame Reference:
       </p>
 
-      INSERT IMAGE
+      <div class="example">
+        <img src="img/frame inheritance.svg">
+
+      </div>
+      <p>
+          To link both classes to one JFrame, the userinput class has to 
+          take in a JFrame as a parameter. This way when an instance of 
+          the userinput class is made inside of the main class, the local 
+          JFrame can be put in as the userinput object's constructor parameter. 
+          Due to the fact that when objects are passed as parameters their 
+          references are shared, this results in the JFrames from both classes 
+          to share the same reference to the same JFrame object. This means that 
+          once the JFrame object is changed in one class, the reference of the 
+          object will changes the behavior of the JFrame in the other class. 
+   
+      </p>
 
       <p>
         I used this same concept when creating my other classes and made it so
