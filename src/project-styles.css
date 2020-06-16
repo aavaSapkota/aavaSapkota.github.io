@@ -41,7 +41,7 @@
   vertical-align: left;
 }
 .column2{
-  flex:30%;
+  /* flex:30%; */
   padding: 10px;
 }
 
