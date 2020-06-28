@@ -3,13 +3,14 @@ html, body {
   height: 100vh;
   padding: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   
   background-color: #d9e4dc;
 }
 
 .topnav {
   width: 100%;
-  background-color:#134f5cff;
+  /* background-color:#134f5cff; */
   overflow: hidden;
   display: inline-block;
 }
@@ -35,7 +36,7 @@ html, body {
   padding-bottom: 5px; 
   float: left;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: white;
+  color: #134f5c;
   text-align: center;
   border-color: white;
   border: 5px soild black;
@@ -54,19 +55,17 @@ html, body {
   color: white;
 }
 
-
-
 .home {
   text-align:center;
   width: 100%;
-  height:auto;
+  height:100vh;
   box-sizing:border-box;
   vertical-align: auto;
 }
 
 .img-wrapper{
   width: 100%;
-  height:70vh;
+  height:90vh;
   background-image: url("img/home-bkg (1).svg");
   background-repeat: no-repeat;
   background-position: top; 
@@ -77,7 +76,7 @@ html, body {
   text-align: center;
   color: black;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 55px;
+  font-size: 70px;
   padding-top: 80px;
 }
 
