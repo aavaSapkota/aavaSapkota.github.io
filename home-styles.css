@@ -19,8 +19,6 @@ html, body {
   float:left;
   padding-left:50px; 
   padding-top:7px; 
-  width: 60px;
-  height:70px; 
 }
 
 .main-nav{
@@ -58,14 +56,14 @@ html, body {
 .home {
   text-align:center;
   width: 100%;
-  height:100vh;
+  height:100%;
   box-sizing:border-box;
   vertical-align: auto;
 }
 
 .img-wrapper{
   width: 100%;
-  height:90vh;
+  height:100vh;
   background-image: url("img/home-bkg (1).svg");
   background-repeat: no-repeat;
   background-position: top; 
@@ -77,14 +75,14 @@ html, body {
   color: black;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 70px;
-  padding-top: 80px;
+  padding-top: 10%;
 }
 
 .home p{
   font-family: Georgia,Utopia,Charter,serif;
   line-height: 1.5;
   color: black; 
-  font-size: 20px; 
+  font-size: 25vh; 
   
 }
 
@@ -99,19 +97,6 @@ html, body {
   font-size: 16px;
 }
 
-.bottom-bar{
-  font-size: 35px;
-  padding:25px;
-  margin-top:5px;
-  background-color: rgb(38, 130, 148);
-  color:white;
-}
-
-.bottom-bar a{
-  color:white;
-  text-decoration: none;
-
-}
 
 
 
@@ -132,7 +117,7 @@ html, body {
 
 .slider {
   height: 30px;
-  padding-left: 5px;
+  padding-left: 10px;
   overflow: hidden;
 }
 
@@ -165,17 +150,17 @@ html, body {
 }
 
 @keyframes slide {
-  0% {margin-top: -205px;}
-  10% {margin-top: -180px;}
-  20% {margin-top: -180px;}
-  30% {margin-top: -135px;}
-  40% {margin-top: -135px;}
-  50% {margin-top: -90px;}
-  60% {margin-top: -90px;}
-  70% {margin-top: -45px;}
-  80% {margin-top: -45px;}
-  90% {margin-top: 0px;}
-  100% {margin-top: 0px;}
+  0% {margin-top: -200px;}
+  10% {margin-top: -162px;}
+  20% {margin-top: -162px;}
+  30% {margin-top: -122px;}
+  40% {margin-top: -122px;}
+  50% {margin-top: -82px;}
+  60% {margin-top: -82px;}
+  70% {margin-top: -42px;}
+  80% {margin-top: -42px;}
+  90% {margin-top: -2px;}
+  100% {margin-top: -2px;}
 }
 
 

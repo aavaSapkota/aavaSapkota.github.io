@@ -1,16 +1,17 @@
 .abt-wrapper{
   display:flex; 
   width: 100%;
-  height:100%;
-  padding-bottom: 50px;
+  height:auto;
+  /* padding-bottom: 50px; */
+  vertical-align:center;
 }
 .about {
-  /* text-align: center; */
   width:50%;
   float: center; 
   color: white;
-  height: auto;
+  height: 100%;
   padding-left: 30px;
+  padding-top: 100px;
   margin: 30px;
   
 }
@@ -19,28 +20,31 @@
   border-color: antiquewhite;
   float: center;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 50px;
+  font-size: 15vh;
 }
 
 .about-me{
   flex: 50%;
   padding-top: 5px;
-  font-size: 17px;
+  font-size: 3vh;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  float: center;
-  text-align: center;
+  float:left;
+  text-align: left;
+  justify-content: center;
 }
 
 .about-me-img{
   flex: 15%; 
   align-items: right;
-  padding:100px
-  
+  padding:150px;
+  background-color: white;
 }
 
 .about-me-img img{
-  width: 300px; 
-  height: 450px;
+  
+  vertical-align: bottom;
+  width: 60vh; 
+  height: 90vh;
 }
 
 

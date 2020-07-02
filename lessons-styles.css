@@ -4,7 +4,7 @@
   height: auto;
   width: 100%;
   box-sizing: border-box;
-  padding-top: 1px;
+  padding-top: 50px;
   padding-bottom: 10px;
   float: center;
   align-content: space-between;
@@ -14,7 +14,7 @@
   border-color: antiquewhite;
   float: center;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 50px;
+  font-size: 70px;
   margin-bottom: 1px;
 }
 

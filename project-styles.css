@@ -1,26 +1,30 @@
 .projects {
   text-align: center;
-  color: black;
+  
   height: auto; 
   width: 100%;
   box-sizing: border-box;
-  padding-top: 1px;
+  padding-top: 50px;
   padding-bottom: 10px;
   float: center;
   align-content: space-between; 
-  background-image: linear-gradient(#ffffff 50%,#0d2b31ff,50%);
+  background-color: #4a6b7c;
 }
 
 .projects h1 {
-  border-color: antiquewhite;
+  color: white;
   float: center;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 50px;
+  font-size: 80px;
   margin-bottom: 1px;
 }
 
+.projects h4 {
+  color: white;
+}
+
 .projects p {
-  padding-top: 5px;
+  padding-top: 20px;
   font-size: 17px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-align: center;
@@ -52,6 +56,22 @@
 .built-with{
   font-family: 'Open Sans', sans-serif;
 }
+
+.bottom-bar{
+  font-size: 35px;
+  padding:25px;
+  margin-top:5px;
+  background-color: rgb(38, 130, 148);
+  color:white;
+  text-align: center; 
+}
+
+.bottom-bar a{
+  color:white;
+  text-decoration: none;
+
+}
+
 
 .description{
   padding-bottom: 20px;
