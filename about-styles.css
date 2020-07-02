@@ -2,31 +2,30 @@
   display:flex; 
   width: 100%;
   height:auto;
-  /* padding-bottom: 50px; */
-  vertical-align:center;
+  display:flex;;
+  flex-wrap: wrap;
+  position: relative;
 }
 .about {
-  width:50%;
+  width:48%;
   float: center; 
   color: white;
   height: 100%;
-  padding-left: 30px;
-  padding-top: 100px;
+  padding: calc(4vw);
   margin: 30px;
+  position: absolute;
   
 }
 
 .about h1 {
-  border-color: antiquewhite;
   float: center;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 15vh;
+  font-size: calc(10vw);
 }
 
 .about-me{
   flex: 50%;
-  padding-top: 5px;
-  font-size: 3vh;
+  font-size: calc(1.5vw);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   float:left;
   text-align: left;

@@ -58,7 +58,7 @@ html, body {
   width: 100%;
   height:100%;
   box-sizing:border-box;
-  vertical-align: auto;
+  vertical-align: center;
 }
 
 .img-wrapper{
@@ -74,8 +74,8 @@ html, body {
   text-align: center;
   color: black;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 70px;
-  padding-top: 10%;
+  font-size: 12vh;
+  padding-top: calc(12vw);
 }
 
 .home p{
