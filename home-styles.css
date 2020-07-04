@@ -74,8 +74,8 @@ html, body {
   text-align: center;
   color: black;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 12vh;
-  padding-top: calc(12vw);
+  font-size: calc(5vw);
+  padding-top: calc(10% + 50px);
 }
 
 .home p{
@@ -83,22 +83,7 @@ html, body {
   line-height: 1.5;
   color: black; 
   font-size: 25vh; 
-  
 }
-
-.button{
-  background-color: #2f6796; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-
-
 
 .intro {
   font-size: 20px;
