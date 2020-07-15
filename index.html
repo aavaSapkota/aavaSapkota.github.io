@@ -52,8 +52,8 @@
         </div>
         <div class="main-nav">
           <a href="#about">About Me!</a>
-          <a href="#lessons">Lessons</a>
           <a href="#projects">Projects</a>
+          <a href="#lessons">Lessons</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
@@ -78,6 +78,7 @@
         </div>
       </div>
     </div>
+
     <main>
       <div class="abt-wrapper" style="background-color: #0d2b31ff;">
         <img src="img/About-ME-FINAL-IMG.svg" style = "position: relative; width: 100%; height: 100%;">
@@ -191,113 +192,84 @@
           Curious about concepts in Java? Check out some of these tutorials!
         </p>
 
-<div class="cards-all card-coloumns" style="display:flex;flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-evenly;">
-  <div class="card text-white bg-primary mb-3" style="width: 40vh; height: 35vh;margin:3%;">
-    <div class="card-body">
-      <h3 class="card-title">OOP</h3>
-      <p class="card-text">
-        What is Object Oriented Programming? Click below to find out...
-      </p>
-      <a
-        href="OOP.html"
-        class="card-link" style = "color: white;"
-        >Go to Tutorial</a
-      >
-    </div>
-  </div>
+        <div class="cards-all card-coloumns" style="display:flex;flex-direction: row; flex-wrap: wrap; justify-content: space-evenly;">
+          <div class="card text-white bg-primary mb-3" style="width: 40vh; height: 35vh;margin:3%;">
+            <div class="card-body">
+              <h3 class="card-title">OOP</h3>
+              <p class="card-text">
+                What is Object Oriented Programming? Click below to find out...
+              </p>
+              <a href="OOP.html" class="card-link" style = "color: white;">Go to Tutorial</a>
+            </div>
+          </div>
 
-  <div class="card text-white bg-danger mb-3" style="width: 40vh; height: 35vh;margin:3%;">
-    <div class="card-body">
-      <h3 class="card-title">Array and Arraylists</h3>
-      <p class="card-text">
-        Learn how to make and use Arrays and Arraylists!
-      </p>
-      <a href="Arrays.html" class="card-link" style = "color: white;"
-        >Go to Tutorial</a
-      >
-    </div>
-  </div>
+          <div class="card text-white bg-danger mb-3" style="width: 40vh; height: 35vh;margin:3%;">
+            <div class="card-body">
+              <h3 class="card-title">Array and Arraylists</h3>
+              <p class="card-text">
+                Learn how to make and use Arrays and Arraylists!
+              </p>
+              <a href="Arrays.html" class="card-link" style = "color: white;">Go to Tutorial</a>
+            </div>
+          </div>
 
-  <div class="card text-white bg-info mb-3" style="width: 40vh; height: 35vh;margin:3%;">
-    <div class="card-body">
-      <h3 class="card-title">Search and Sort</h3>
-      <p class="card-text">
-        Discover how to conquer data below:
-      </p>
-      <a
-        href="SearchSort.html"
-        class="card-link" style = "color: white;"
-        >Go to Tutorial</a
-      >
-    </div>
-  </div>
-    <div class="card text-white bg-success mb-3" style="width: 40vh; height: 35vh;margin:3%; ">
-      <div class="card-body">
-        <h3 class="card-title">Making a Video Game</h3>
-        <p class="card-text">
-          Some tips and tricks to remeber when creating a Java Swing Game:
-        </p>
-        <a
-          href="FinalProject.html"
-          class="card-link" style = "color: white;"
-          >Go to Tutorial</a
-        >
-      </div>
-    </div>
-  </div>
-</div>
-</main>
+          <div class="card text-white bg-info mb-3" style="width: 40vh; height: 35vh;margin:3%;">
+            <div class="card-body">
+              <h3 class="card-title">Search and Sort</h3>
+              <p class="card-text">
+                Discover how to conquer data below:
+              </p>
+              <a href="SearchSort.html" class="card-link" style = "color: white;">Go to Tutorial</a>
+            </div>
+          </div>
 
-    <footer>
-      <div class = "contact">
-        <h1>Get in touch!</h1>
-        <div id = "contact" class="contact-form" action="contactform.php" method="post">
-          <input type ="text" name="name" placeholder="Full Name">
-          <input type ="text" name="mail" placeholder="Your e-mail">
-          <input type ="text" name="subject" placeholder="Subject">
-          <textarea name = "message" placeholder="Message"></textarea>
-          <button type="submit" name="submit" class="btn btn-primary">Send Mail</button>
+          <div class="card text-white bg-success mb-3" style="width: 40vh; height: 35vh;margin:3%; ">
+            <div class="card-body">
+              <h3 class="card-title">Making a Video Game</h3>
+              <p class="card-text">
+                Some tips and tricks to remember when creating a Java Swing Game:
+              </p>
+              <a href="FinalProject.html" class="card-link" style = "color: white;">Go to Tutorial</a>
+            </div>
+          </div>
         </div>
       </div>
-      
 
-
-<!-- 
-      <div class="contact" id="contact">
+      <div class = "contact" id="contact" action="mailer.php" method="post">
         <h1>Get in touch!</h1>
-        <h3>Want to know more about me and my work?</h3>
-        <h4>
-          Check out my resume
-          <a
-            href="Aava Sapkota - Resume.pdf"
-            target="_blank"
-            style="text-decoration: none; color: white;"
-            >here!</a
-          >
-        </h4>
-        <h4 style="color: white;">Email me at: aavachhori@gmail.com</h4>
+        <small class="form-text">Send me a message below or email me at aavachhori@gmail.com</small>
+        <form style="padding:5% 15%; text-align: left;">
+          <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="name" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="name" placeholder="Enter Full Name">
+          </div>
+          <div class="form-group">
+            <label for="Email">Email address</label>
+            <input type="email" name="mail" class="form-control" id="exampleInputEmail1" aria-describedby="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="Message">Message</label>
+            <textarea type="text" name="message" class="form-control" id="exampleInputPassword1" placeholder="Message"></textarea>
+          </div>
+          <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </main>
 
-        <h4>Or check out my socials:</h4>
-
-        <div>
-          <a href="https://www.linkedin.com/in/aava-sapkota-584b3b175/"
-            ><img
-              src="img/location-icon-png-white-5.png"
-              alt="linkedin"
-              width="50"
-              height="50"
-          /></a>
-          <a href="https://www.instagram.com/aava_s._/"
-            ><img
-              src="img/instagram.png"
-              alt="instagram"
-              width="60"
-              height="45"
-          /></a>
-        </div>
-      </div> -->
+    <footer style="text-align: center;padding:2% 20%;">
+      <h1 style="font-family: 'Courier New', Courier, monospace; font-size: calc(2vw);">This website was created by Aava Sapkota (2020)</h1>
     </footer>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.15.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.15.5/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
   </body>
 </html>
+
+

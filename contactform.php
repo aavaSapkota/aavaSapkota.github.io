@@ -1,16 +1,36 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-if(isset($_POST['submit'])){
-    $name = $_POST['name'];
-    $subject = $_POST['subject'];
-    $mailFrom = $_POST['mail'];
-    $message = $_POST['message'];
+require_once "C:\xampp\php\PEAR\autoload.php";
 
-    $myEmail = "aavachhori@gmail.com";
-    $headers = "From: ".$mailFrom;
-    $txt = "You have recieved a message from your website from: ".$name.".\n\n".$message;
+//PHPMailer Object
+$mail = new PHPMailer(true); //Argument true in constructor enables exceptions
 
+//From email address and name
+$mail->From = "aavachhori@gmail.com";
+$mail->FromName = "Ava";
 
-    mail($myEmail, $subject, $txt, $headers);
-    header("Location: index.php?mailsend"); 
+//To address and name
+$mail->addAddress("aavachhori@gmail.com"); //Recipient name is optional
+
+//Address to which recipient will reply
+$mail->addReplyTo("aavachhori@gmail.com", "Reply");
+
+// //CC and BCC
+// $mail->addCC("cc@example.com");
+// $mail->addBCC("bcc@example.com");
+
+//Send HTML or Plain Text email
+$mail->isHTML(true);
+
+$mail->Subject = "Subject Text";
+$mail->Body = "<i>Mail body in HTML</i>";
+$mail->AltBody = "This is the plain text version of the email content";
+
+try {
+    $mail->send();
+    echo "Message has been sent successfully";
+} catch (Exception $e) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
 }
