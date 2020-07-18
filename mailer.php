@@ -27,10 +27,11 @@
         $mail->Body = $txt;
         $mail->AddAddress($myEmail);
 
-        $mail->Send();
 
-        echo "<p>gottem</p>";
+        echo "<p>ok....</p>";
+        $mail->Send();
+        echo "<p>Haha</p>";
+
     }
             
 ?>
-

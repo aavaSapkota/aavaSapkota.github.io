@@ -1,36 +1,26 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require_once "C:\xampp\php\PEAR\autoload.php";
+require_once( 'vendor/autoload.php' );
 
-//PHPMailer Object
-$mail = new PHPMailer(true); //Argument true in constructor enables exceptions
+$mail= new PHPMailer();
+$mail->isSMTP();
+$mail->SMTPAuth = true; 
+$mail->SMTPSecure = 'tls';
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = "587";
+$mail->isHTML();
+$mail->Username = 'aavachhori@gmail.com';
+$mail->Password = 'myPassword';
+$mail->SetFrom('aavachhori@gmail.com');
+$mail->Subject= 'ok';
+$mail->Body = 'A test email!';
+$mail->AddAddress('aavachhori@gmail.com');
 
-//From email address and name
-$mail->From = "aavachhori@gmail.com";
-$mail->FromName = "Ava";
+echo "<p>ok....</p>";
+$mail->Send();
+echo "<p>Haha</p>";
 
-//To address and name
-$mail->addAddress("aavachhori@gmail.com"); //Recipient name is optional
-
-//Address to which recipient will reply
-$mail->addReplyTo("aavachhori@gmail.com", "Reply");
-
-// //CC and BCC
-// $mail->addCC("cc@example.com");
-// $mail->addBCC("bcc@example.com");
-
-//Send HTML or Plain Text email
-$mail->isHTML(true);
-
-$mail->Subject = "Subject Text";
-$mail->Body = "<i>Mail body in HTML</i>";
-$mail->AltBody = "This is the plain text version of the email content";
-
-try {
-    $mail->send();
-    echo "Message has been sent successfully";
-} catch (Exception $e) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-}
+?>

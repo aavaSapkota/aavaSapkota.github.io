@@ -15,6 +15,9 @@
   margin: 30px;
   position: absolute;
   
+  animation-name:textFloatIn;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
 }
 
 .about h1 {
@@ -44,6 +47,17 @@
   vertical-align: bottom;
   width: 60vh; 
   height: 90vh;
+}
+
+@keyframes textFloatIn {
+  0%{
+    opacity: 0%;
+    margin-left:-50px;
+  }
+  100%{
+    opacity: 100%;
+    margin-left:30px;
+  }
 }
 
 
