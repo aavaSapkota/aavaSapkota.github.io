@@ -1,6 +1,5 @@
 .contact {
-  
-  
+
   color: white;
   height: auto;
   width: 100%;
@@ -44,4 +43,11 @@
   height:300px;
   margin-top: 50px;
   box-sizing: border-box;
+}
+
+
+footer{
+  text-align: center;
+  width: 100%;
+  height:100px; 
 }
