@@ -5,5 +5,5 @@ function mailto(){
     for(let item of document.getElementsByClassName("input-field")){
         if(item.value != "SUBMIT") message += item.value + "%0A";
     }
-    emailWindow = window.open("mailto:justinlu.photo@gmail.com?subject=Justin%20Lu's%20Website%20Form%20Response&body="+message);
+    emailWindow = window.open("mailto:aavachhori@gmail.com?subject=Aava%20Sapkota's%20Website%20Form%20Response&body="+message);
 }
