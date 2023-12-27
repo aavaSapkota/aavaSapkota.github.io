@@ -61,19 +61,19 @@ html, body {
   vertical-align: center;
 }
 
-.img-wrapper{
+/* .img-wrapper{
   width: 100%;
   height:100vh;
   background-image: url("img/home-bkg (1).svg");
   background-repeat: no-repeat;
   background-position: top; 
   background-size: cover; 
-}
+} */
 
 .home h1 {
   text-align: center;
   color: black;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: calc(5vw);
   padding-top: calc(10% + 50px);
 }
